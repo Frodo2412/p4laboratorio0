@@ -8,14 +8,14 @@
 
 #include "DtReserva.h"
 #include "DtHuesped.h"
+#include "../include/utils.h"
 
 class DtReservaGrupal : public DtReserva {
 private:
-    int MAX_HUESPEDES = 10;
-    DtHuesped huespedes[];
+    DtHuesped *huespedes[MAX_HUESPEDES];
 public:
     DtReservaGrupal();
-    DtReservaGrupal(ReservaGrupal);
+    DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped*);
     DtHuesped* getHuespedes();
 };
 

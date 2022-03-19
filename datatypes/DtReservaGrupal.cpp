@@ -4,15 +4,27 @@
 
 #include "DtReservaGrupal.h"
 
-DtReserva *DtReservaGrupal::getHuespedes() {
-    return this->huespedes;
+DtHuesped *DtReservaGrupal::getHuespedes() {
+    return *this->huespedes;
 }
 
 DtReservaGrupal::DtReservaGrupal() {
 
 }
 
-DtReservaGrupal::DtReservaGrupal(ReservaGrupal rg) {
-    DtHuesped hues[MAX_HUESPEDES];
-    this->huespedes = hues;
+DtReservaGrupal::DtReservaGrupal(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, float costo, int hab,
+                                 DtHuesped *hues) {
+    this->codigo = cod;
+    this->checkIn = In;
+    this->checkOut = Out;
+    this->estado = estado;
+    this->costo = costo;
+    this->Habitacion = hab;
+
+    int i = 0;
+    while (i < MAX_HUESPEDES && &hues[i] != nullptr) {
+        this->huespedes[i] = &hues[i];
+        i++;
+    }
+
 }

@@ -4,14 +4,6 @@
 
 #include "DtReservaIndividual.h"
 
-DtReservaIndividual::DtReservaIndividual(ReservaIndividual ri) {
-    this->codigo = ri.getCodigo();
-    this->checkIn = ri.getCheckIn();
-    this->checkOut = ri.getCheckOut();
-    this->estado = ri.getEstado();
-    this->Habitacion = ri.getHabitacion()->getNumero();
-    this->pagado = ri.isPago();
-}
 
 bool DtReservaIndividual::isPago() {
     return this->pagado;
@@ -19,4 +11,15 @@ bool DtReservaIndividual::isPago() {
 
 DtReservaIndividual::DtReservaIndividual() {
 
+}
+
+DtReservaIndividual::DtReservaIndividual(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, float costo, int hab,
+                                         bool pag) {
+    this->codigo = cod;
+    this->checkIn = In;
+    this->checkOut = Out;
+    this->estado = estado;
+    this->costo = costo;
+    this->Habitacion = hab;
+    this->pagado = pag;
 }

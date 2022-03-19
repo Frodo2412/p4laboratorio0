@@ -7,14 +7,15 @@
 
 
 #include "DtReserva.h"
-#include "../include/ReservaIndividual.h"
 
 class DtReservaIndividual : public DtReserva {
 private:
     bool pagado;
 public:
     DtReservaIndividual();
-    DtReservaIndividual(ReservaIndividual);
+
+    DtReservaIndividual(int, DtFecha, DtFecha, EstadoReserva, float, int, bool);
+
     bool isPago();
 };
 

@@ -36,4 +36,3 @@ Huesped *Reserva::getHuesped() {
     return huesped;
 }
 
-}

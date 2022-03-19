@@ -7,20 +7,28 @@
 
 #include "EstadoReserva.h"
 #include "DtFecha.h"
+#include "../include/Reserva.h"
 
 class DtReserva {
 private:
     int codigo;
-    DtFecha checkIn;
+    DtFecha checkIn, checkOut;
     EstadoReserva estado;
     float costo;
     int Habitacion;
 public:
-    DtReserva(Reserva);
+    DtReserva();
+
+    DtReserva(Reserva r);
+
     int getCodigoReserva();
+
     DtFecha getCheckIn();
+
     EstadoReserva getEstado();
+
     float getCosto();
+
     int getHabitacion();
 };
 

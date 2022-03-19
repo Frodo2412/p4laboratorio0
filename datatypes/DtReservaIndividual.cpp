@@ -10,3 +10,7 @@ DtReservaIndividual::DtReservaIndividual(ReservaIndividual RI) {
 bool DtReservaIndividual::isPago() {
     return this->pagado;
 }
+
+DtReservaIndividual::DtReservaIndividual() {
+
+}

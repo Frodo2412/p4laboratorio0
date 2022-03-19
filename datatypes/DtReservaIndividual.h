@@ -12,6 +12,7 @@ class DtReservaIndividual : public DtReserva {
 private:
     bool pagado;
 public:
+    DtReservaIndividual();
     DtReservaIndividual(ReservaIndividual);
     bool isPago();
 };

@@ -12,10 +12,14 @@ private:
     float precio;
     int capacidad;
 public:
+    DtHabitacion();
+
     DtHabitacion(int, float, int);
 
     int getNumero();
+
     float getPrecio();
+
     int getCapacidad();
 };
 

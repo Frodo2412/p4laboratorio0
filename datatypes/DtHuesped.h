@@ -15,13 +15,18 @@ private:
     string email;
     bool esFinger;
 public:
+    DtHuesped();
+
     DtHuesped(string, string, bool);
 
     string getNombre();
+
     string getEmail();
+
     bool getEsFinger();
 
     void setNombre(string);
+
     void setEsFinger(bool);
 };
 

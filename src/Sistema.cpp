@@ -1,7 +1,3 @@
-//
-// Created by brunolemus on 3/19/22.
-//
-
 #include <stdexcept>
 #include "../include/Sistema.h"
 
@@ -12,6 +8,22 @@ Sistema::Sistema() {
         i++;
     }
     tope = 0;
+}
+
+void Sistema::agregarHuesped(string nombre, string email, bool esFinger){
+    if (!isMailValido(email)){
+        int i=0;
+        bool salir = true;
+        while(salir){
+            if(huespedes[i] == nullptr){
+                salir = false;
+            }
+            else
+            i++;
+        }
+        huespedes[i] = new Huesped(nombre, email, esFinger);
+    }else
+        throw std::invalid_argument("Email existente");
 }
 
 void Sistema::agregarHabitacion(int numero, float precio, int capacidad) {
@@ -36,4 +48,16 @@ bool Sistema::numeroNoAsignadoAHabitacion (int numero) {
 
 bool Sistema::hayEspacioParaHabitacion() {
     return tope < MAX_HABITACIONES;
+}
+
+bool Sistema::isMailValido(string email){
+    int i = 0;
+    bool aparece = false;
+    while (huespedes[i] != nullptr && !aparece){
+       if(huespedes[i]->getEmail() == email){
+           aparece = true;
+       }
+       i++;
+    }
+    return aparece;
 }

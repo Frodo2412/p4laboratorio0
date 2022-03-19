@@ -78,11 +78,17 @@ build CMakeFiles/p4laboratorio0.dir/main.cpp.o: CXX_COMPILER__p4laboratorio0_Deb
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir
 
-build CMakeFiles/p4laboratorio0.dir/Sistema.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/Sistema.cpp || cmake_object_order_depends_target_p4laboratorio0
-  DEP_FILE = CMakeFiles/p4laboratorio0.dir/Sistema.cpp.o.d
+build CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/src/Sistema.cpp || cmake_object_order_depends_target_p4laboratorio0
+  DEP_FILE = CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
-  OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir
+  OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/src
+
+build CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/datatypes/EstadoReserva.cpp || cmake_object_order_depends_target_p4laboratorio0
+  DEP_FILE = CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
+  OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/datatypes
 
 
 # =============================================================================
@@ -92,7 +98,7 @@ build CMakeFiles/p4laboratorio0.dir/Sistema.cpp.o: CXX_COMPILER__p4laboratorio0_
 #############################################
 # Link the executable p4laboratorio0
 
-build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/Sistema.cpp.o
+build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   POST_BUILD = :

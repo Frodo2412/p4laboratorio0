@@ -7,7 +7,8 @@
 
 
 class Sistema {
-
+public:
+    Sistema();
 };
 
 

@@ -12,6 +12,7 @@ private:
     float precio;
     int capacidad;
 public:
+    Habitacion(int, float, int);
     int getNumero();
     float getPrecio();
     int getCapacidad();

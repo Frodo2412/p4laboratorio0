@@ -3,3 +3,7 @@
 //
 
 #include "../include/Sistema.h"
+
+Sistema::Sistema() {
+
+}

@@ -3,6 +3,8 @@
 //
 
 #include "DtFecha.h"
+#include <iostream>
+#include <math.h>
 
 int DtFecha::getDia() {
     return dia;
@@ -17,10 +19,27 @@ int DtFecha::getAnio() {
 }
 
 DtFecha::DtFecha(int d, int m, int a) {
+    if (d < 0 || 30 < d)
+        throw std::invalid_argument("Dia invalido");
+    if (m < 0 || 12 < m)
+        throw std::invalid_argument("Mes invalido");
+    if (a < 1901)
+        throw std::invalid_argument("Anio invalido");
     dia = d;
     mes = m;
     anio = a;
 }
 
 DtFecha::DtFecha() {
+    this->anio = 1901;
+    this->mes = 1;
+    this->dia = 1;
+}
+
+int DtFecha::operator-(DtFecha fecha) {
+
+    int thisFecha = this->anio * 365 + this->mes * 30 + this->dia;
+    int ultimaFecha = fecha.anio * 365 + fecha.mes * 30 + fecha.dia;
+
+    return abs(thisFecha - ultimaFecha);
 }

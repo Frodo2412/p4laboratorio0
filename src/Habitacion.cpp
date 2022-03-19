@@ -21,5 +21,5 @@ void Habitacion::setPrecio(float p) {
 }
 
 void Habitacion::setCapacidad(int c) {
-    capacidad = c
+    capacidad = c;
 }

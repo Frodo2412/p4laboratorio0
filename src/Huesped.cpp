@@ -1,7 +1,3 @@
-//
-// Created by brunolemus on 3/19/22.
-//
-
 #include "../include/Huesped.h"
 
 Huesped::Huesped(string nombre, string email, bool esFinger) {
@@ -28,10 +24,4 @@ void Huesped::setNombre(string nombre) {
 
 void Huesped::setFinger(bool esFinger) {
     this->esFinger = esFinger;
-}
-
-Huesped::Huesped() {
-    nombre = "";
-    email = "";
-    esFinger = false;
 }

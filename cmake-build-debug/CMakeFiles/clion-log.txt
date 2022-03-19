@@ -1,4 +1,4 @@
-/app/extra/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/renecruz/CLionProjects/p4laboratorio0
+/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -DCMAKE_CXX_COMPILER=/bin/g++ -G Ninja /home/brunolemus/facultad/p4laboratorio0
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug
+-- Build files have been written to: /home/brunolemus/facultad/p4laboratorio0/cmake-build-debug

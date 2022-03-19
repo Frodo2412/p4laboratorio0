@@ -1,18 +1,28 @@
-#include <iostream>
-#include "include/ReservaGrupal.h"
+//#ifndef P4LABORATORIO0_MAIN
+//#define P4LABORATORIO0_MAIN
 
+#include <iostream>
+#include "include/Sistema.h"
 
 int main() {
-    DtFecha hoy(19, 3, 2022);
-    DtFecha proxima(20, 3, 2022);
-    Huesped yo("Bruno", "brunlemus@gmail.com", true);
-    Habitacion miCasa(1, 100, 4);
-
-    std::cout << yo.isFinger();
-    Huesped losPibes[3] = {{"Bruno Lemus",   "brunlemus553@gmail.com", true},
-                           {"Guillermo Rey", "guillerey@gmail.com",    true},
-                           {"Dylan Smyth",   "dylan@gmail.com",        true}};
-    ReservaGrupal reserva = ReservaGrupal(1, hoy, proxima, Abierta, yo, miCasa, losPibes);
-
-    std::cout << reserva.getHuesped()->getNombre();
+    bool seguir = true;
+    Sistema system = Sistema();
+    while (seguir) {
+        int numero, capacidad;
+        float precio;
+        std::cout << "Ingresar numero de habitacion a agregar: " << std::endl;
+        std::cin >> numero;
+        std::cout << "Ingresar precio de la habitacion: ";
+        std::cin >> precio;
+        std::cout << "Ingresar capacidad de la habitacion: ";
+        std::cin >> capacidad;
+        try {
+            system.agregarHabitacion(numero, precio, capacidad);
+        } catch (...) {
+            std::cout << "Error inesperado al agregar la habitacion, seguramente el numero ya este utilizado" << std::endl;
+        }
+        std::cout << "si quiere realizar otra operacion ingrese 1, en otro caso ingrese 0" << std::endl;
+        std::cin >> seguir;
+    }
+    return 0;
 }

@@ -21,6 +21,8 @@ public:
     int getMes();
 
     int getAnio();
+
+    int operator-(DtFecha);
 };
 
 

@@ -4,10 +4,6 @@
 
 #include "DtHabitacion.h"
 
-DtHabitacion::DtHabitacion() {
-
-}
-
 DtHabitacion::DtHabitacion(int numero, float precio, int capacidad) {
     this->numero = numero;
     this->precio = precio;
@@ -24,4 +20,10 @@ float DtHabitacion::getPrecio() {
 
 int DtHabitacion::getCapacidad() {
     return this->capacidad;
+}
+
+DtHabitacion::DtHabitacion(Habitacion *h) {
+    this->numero = h->getNumero();
+    this->capacidad = h->getCapacidad();
+    this->precio = h->getPrecio();
 }

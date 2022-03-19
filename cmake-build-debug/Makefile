@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /app/extra/clion/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/180/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /app/extra/clion/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/180/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/renecruz/CLionProjects/p4laboratorio0
+CMAKE_SOURCE_DIR = /home/unzip/CLionProjects/p4laboratorio0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug
+CMAKE_BINARY_DIR = /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/app/extra/clion/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/180/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -78,7 +78,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/app/extra/clion/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/180/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -273,6 +273,30 @@ src/Habitacion.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.s
 .PHONY : src/Habitacion.cpp.s
 
+src/Huesped.o: src/Huesped.cpp.o
+.PHONY : src/Huesped.o
+
+# target to build an object file
+src/Huesped.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/Huesped.cpp.o
+.PHONY : src/Huesped.cpp.o
+
+src/Huesped.i: src/Huesped.cpp.i
+.PHONY : src/Huesped.i
+
+# target to preprocess a source file
+src/Huesped.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/Huesped.cpp.i
+.PHONY : src/Huesped.cpp.i
+
+src/Huesped.s: src/Huesped.cpp.s
+.PHONY : src/Huesped.s
+
+# target to generate assembly for a file
+src/Huesped.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/Huesped.cpp.s
+.PHONY : src/Huesped.cpp.s
+
 src/Reserva.o: src/Reserva.cpp.o
 .PHONY : src/Reserva.o
 
@@ -296,6 +320,30 @@ src/Reserva.s: src/Reserva.cpp.s
 src/Reserva.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.s
 .PHONY : src/Reserva.cpp.s
+
+src/ReservaGrupal.o: src/ReservaGrupal.cpp.o
+.PHONY : src/ReservaGrupal.o
+
+# target to build an object file
+src/ReservaGrupal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.o
+.PHONY : src/ReservaGrupal.cpp.o
+
+src/ReservaGrupal.i: src/ReservaGrupal.cpp.i
+.PHONY : src/ReservaGrupal.i
+
+# target to preprocess a source file
+src/ReservaGrupal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.i
+.PHONY : src/ReservaGrupal.cpp.i
+
+src/ReservaGrupal.s: src/ReservaGrupal.cpp.s
+.PHONY : src/ReservaGrupal.s
+
+# target to generate assembly for a file
+src/ReservaGrupal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/p4laboratorio0.dir/build.make CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.s
+.PHONY : src/ReservaGrupal.cpp.s
 
 src/ReservaIndividual.o: src/ReservaIndividual.cpp.o
 .PHONY : src/ReservaIndividual.o
@@ -372,9 +420,15 @@ help:
 	@echo "... src/Habitacion.o"
 	@echo "... src/Habitacion.i"
 	@echo "... src/Habitacion.s"
+	@echo "... src/Huesped.o"
+	@echo "... src/Huesped.i"
+	@echo "... src/Huesped.s"
 	@echo "... src/Reserva.o"
 	@echo "... src/Reserva.i"
 	@echo "... src/Reserva.s"
+	@echo "... src/ReservaGrupal.o"
+	@echo "... src/ReservaGrupal.i"
+	@echo "... src/ReservaGrupal.s"
 	@echo "... src/ReservaIndividual.o"
 	@echo "... src/ReservaIndividual.i"
 	@echo "... src/ReservaIndividual.s"

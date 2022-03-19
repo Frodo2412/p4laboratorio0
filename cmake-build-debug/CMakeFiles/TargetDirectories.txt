@@ -1,3 +1,3 @@
-/home/brunolemus/facultad/p4laboratorio0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/brunolemus/facultad/p4laboratorio0/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/brunolemus/facultad/p4laboratorio0/cmake-build-debug/CMakeFiles/p4laboratorio0.dir
+/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles/p4laboratorio0.dir

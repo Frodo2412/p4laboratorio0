@@ -24,10 +24,6 @@ public:
     string getEmail();
 
     bool getEsFinger();
-
-    void setNombre(string);
-
-    void setEsFinger(bool);
 };
 
 

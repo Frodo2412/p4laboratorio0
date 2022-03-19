@@ -21,3 +21,14 @@ float ReservaGrupal::calcularCosto() {
     int cantDias = this->getCheckOut() - this->getCheckIn();
     return costoPorDia * cantDias;
 }
+
+DtReservaGrupal ReservaGrupal::toDt() {
+
+    DtHuesped *hues[MAX_HUESPEDES];
+    int i = 0;
+    while (i < MAX_HUESPEDES && &huespedes[i] != nullptr) {
+        hues[i] = huespedes[i]->toDt();
+        i++;
+    }
+    return DtReservaGrupal(codigo, checkIn, checkOut, estado, calcularCosto(), habitacion->getNumero(), hues);
+}

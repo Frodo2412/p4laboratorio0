@@ -3,6 +3,8 @@
 #define P4LABORATORIO0_HABITACION_H
 
 
+#include "../datatypes/DtHabitacion.h"
+
 class Habitacion {
 private:
     int numero;
@@ -10,12 +12,18 @@ private:
     int capacidad;
 public:
     Habitacion(int = 0, float = 0, int = 0);
+
     int getNumero();
+
     float getPrecio();
+
     int getCapacidad();
 
     void setPrecio(float);
+
     void setCapacidad(int);
+
+    DtHabitacion toDt();
 };
 
 

@@ -3,6 +3,7 @@
 #define P4LABORATORIO0_HUESPED_H
 
 #include <string>
+#include "../datatypes/DtHuesped.h"
 
 using namespace std;
 
@@ -23,6 +24,8 @@ public:
     void setNombre(string nombre);
 
     void setFinger(bool esFinger);
+
+    DtHuesped toDt();
 };
 
 

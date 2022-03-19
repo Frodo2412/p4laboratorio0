@@ -4,7 +4,7 @@
 
 #include "DtFecha.h"
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 int DtFecha::getDia() {
     return dia;
@@ -19,7 +19,7 @@ int DtFecha::getAnio() {
 }
 
 DtFecha::DtFecha(int d, int m, int a) {
-    if (d < 0 || 30 < d)
+    if (d < 0 || d > 30)
         throw std::invalid_argument("Dia invalido");
     if (m < 0 || 12 < m)
         throw std::invalid_argument("Mes invalido");

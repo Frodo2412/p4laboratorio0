@@ -5,21 +5,17 @@
 #ifndef P4LABORATORIO0_DTRESERVA_H
 #define P4LABORATORIO0_DTRESERVA_H
 
-#include "EstadoReserva.h"
 #include "DtFecha.h"
-#include "../include/Reserva.h"
+#include "EstadoReserva.h"
 
 class DtReserva {
-private:
+protected:
     int codigo;
     DtFecha checkIn, checkOut;
     EstadoReserva estado;
     float costo;
     int Habitacion;
 public:
-    DtReserva();
-
-    DtReserva(Reserva r);
 
     int getCodigoReserva();
 

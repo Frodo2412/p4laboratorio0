@@ -7,6 +7,7 @@
 
 
 #include "DtReserva.h"
+#include "../include/ReservaIndividual.h"
 
 class DtReservaIndividual : public DtReserva {
 private:

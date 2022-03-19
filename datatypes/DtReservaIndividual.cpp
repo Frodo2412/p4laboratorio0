@@ -4,7 +4,13 @@
 
 #include "DtReservaIndividual.h"
 
-DtReservaIndividual::DtReservaIndividual(ReservaIndividual RI) {
+DtReservaIndividual::DtReservaIndividual(ReservaIndividual ri) {
+    this->codigo = ri.getCodigo();
+    this->checkIn = ri.getCheckIn();
+    this->checkOut = ri.getCheckOut();
+    this->estado = ri.getEstado();
+    this->Habitacion = ri.getHabitacion()->getNumero();
+    this->pagado = ri.isPago();
 }
 
 bool DtReservaIndividual::isPago() {

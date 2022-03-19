@@ -7,6 +7,7 @@
 
 
 #include "DtReserva.h"
+#include "DtHuesped.h"
 
 class DtReservaGrupal : public DtReserva {
 private:

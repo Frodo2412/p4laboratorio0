@@ -29,3 +29,7 @@ DtReserva::DtReserva(Reserva r): codigo(r.getCodigo()), checkIn(r.getCheckIn()),
 
 DtReserva::DtReserva() {
 }
+
+DtFecha DtReserva::getCheckOut() {
+    return this->checkOut;
+}

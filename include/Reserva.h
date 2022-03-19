@@ -8,16 +8,17 @@
 
 #include "../datatypes/DtFecha.h"
 #include "../datatypes/EstadoReserva.h"
+#include "Habitacion.h"
+#include "Huesped.h"
 
 class Reserva {
-private:
+protected:
     int codigo;
+    Huesped *huesped;
+    Habitacion *habitacion;
     DtFecha checkIn, checkOut;
     EstadoReserva estado;
 public:
-    Reserva();
-
-    Reserva(int cod, DtFecha checkIn, DtFecha checkOut);
 
     void cerrarReserva();
 
@@ -32,6 +33,10 @@ public:
     DtFecha getCheckOut();
 
     EstadoReserva getEstado();
+
+    Habitacion *getHabitacion();
+
+    Huesped *getHuesped();
 };
 
 

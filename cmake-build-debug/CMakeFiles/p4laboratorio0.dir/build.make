@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/180/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /app/extra/clion/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/180/bin/cmake/linux/bin/cmake -E rm -f
+RM = /app/extra/clion/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/unzip/CLionProjects/p4laboratorio0
+CMAKE_SOURCE_DIR = /home/renecruz/CLionProjects/p4laboratorio0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug
+CMAKE_BINARY_DIR = /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/p4laboratorio0.dir/depend.make
@@ -72,128 +72,128 @@ include CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/main.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/main.cpp.o: ../main.cpp
 CMakeFiles/p4laboratorio0.dir/main.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/p4laboratorio0.dir/main.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/main.cpp.o -MF CMakeFiles/p4laboratorio0.dir/main.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/main.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/p4laboratorio0.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/main.cpp.o -MF CMakeFiles/p4laboratorio0.dir/main.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/main.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/main.cpp
 
 CMakeFiles/p4laboratorio0.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/main.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/main.cpp > CMakeFiles/p4laboratorio0.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/main.cpp > CMakeFiles/p4laboratorio0.dir/main.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/main.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/main.cpp -o CMakeFiles/p4laboratorio0.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/main.cpp -o CMakeFiles/p4laboratorio0.dir/main.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o: ../src/Sistema.cpp
 CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/src/Sistema.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/src/Sistema.cpp
 
 CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/src/Sistema.cpp > CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/src/Sistema.cpp > CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/src/Sistema.cpp -o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/src/Sistema.cpp -o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o: ../datatypes/DtFecha.cpp
 CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o: ../src/Habitacion.cpp
 CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/src/Habitacion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/src/Habitacion.cpp
 
 CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/src/Habitacion.cpp > CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/src/Habitacion.cpp > CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/src/Habitacion.cpp -o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/src/Habitacion.cpp -o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o: ../datatypes/DtReserva.cpp
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o: ../datatypes/DtReservaGrupal.cpp
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o: ../datatypes/DtReservaIndividual.cpp
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o -MF CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp > CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp -o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o: ../src/Reserva.cpp
 CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/src/Reserva.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/src/Reserva.cpp
 
 CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/src/Reserva.cpp > CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/src/Reserva.cpp > CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/src/Reserva.cpp -o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/src/Reserva.cpp -o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.s
 
 CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o: CMakeFiles/p4laboratorio0.dir/flags.make
 CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o: ../src/ReservaIndividual.cpp
 CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o: CMakeFiles/p4laboratorio0.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o -c /home/unzip/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o -MF CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o.d -o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o -c /home/renecruz/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp
 
 CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.i"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/unzip/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp > CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/renecruz/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp > CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.i
 
 CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.s"
-	/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/unzip/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp -o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/renecruz/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp -o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.s
 
 # Object files for target p4laboratorio0
 p4laboratorio0_OBJECTS = \
@@ -221,7 +221,7 @@ p4laboratorio0: CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o
 p4laboratorio0: CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o
 p4laboratorio0: CMakeFiles/p4laboratorio0.dir/build.make
 p4laboratorio0: CMakeFiles/p4laboratorio0.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable p4laboratorio0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable p4laboratorio0"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/p4laboratorio0.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -233,6 +233,6 @@ CMakeFiles/p4laboratorio0.dir/clean:
 .PHONY : CMakeFiles/p4laboratorio0.dir/clean
 
 CMakeFiles/p4laboratorio0.dir/depend:
-	cd /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/unzip/CLionProjects/p4laboratorio0 /home/unzip/CLionProjects/p4laboratorio0 /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug /home/unzip/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles/p4laboratorio0.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/renecruz/CLionProjects/p4laboratorio0 /home/renecruz/CLionProjects/p4laboratorio0 /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug /home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/CMakeFiles/p4laboratorio0.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/p4laboratorio0.dir/depend
 

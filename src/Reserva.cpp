@@ -4,10 +4,6 @@
 
 #include "../include/Reserva.h"
 
-Reserva::Reserva(int cod, DtFecha checkIn, DtFecha checkOut) : codigo(cod), checkIn(checkIn), checkOut(checkOut),
-                                                               estado(Abierta) {
-}
-
 DtFecha Reserva::getCheckIn() {
     return checkIn;
 }
@@ -30,4 +26,14 @@ void Reserva::cerrarReserva() {
 
 void Reserva::cancelarReserva() {
     estado = Cancelada;
+}
+
+Habitacion *Reserva::getHabitacion() {
+    return habitacion;
+}
+
+Huesped *Reserva::getHuesped() {
+    return huesped;
+}
+
 }

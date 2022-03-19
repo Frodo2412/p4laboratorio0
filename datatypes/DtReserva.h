@@ -25,6 +25,8 @@ public:
 
     DtFecha getCheckIn();
 
+    DtFecha getCheckOut();
+
     EstadoReserva getEstado();
 
     float getCosto();

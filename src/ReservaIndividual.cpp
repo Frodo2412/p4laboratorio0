@@ -2,7 +2,7 @@
 // Created by unzip on 19/3/22.
 //
 
-#include "ReservaIndividual.h"
+#include "../include/ReservaIndividual.h"
 
 float ReservaIndividual::calcularCosto() {
     return this->getHabitacion()->getPrecio() * (this->getCheckOut() - this->getCheckIn());

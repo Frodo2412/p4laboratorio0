@@ -90,6 +90,12 @@ build CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o: CXX_COMPILER__p4lab
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/datatypes
 
+build CMakeFiles/p4laboratorio0.dir/datatypes/DtHabitacion.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/datatypes/DtHabitacion.cpp || cmake_object_order_depends_target_p4laboratorio0
+  DEP_FILE = CMakeFiles/p4laboratorio0.dir/datatypes/DtHabitacion.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
+  OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/datatypes
+
 build CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/src/Habitacion.cpp || cmake_object_order_depends_target_p4laboratorio0
   DEP_FILE = CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o.d
   FLAGS = -g -std=gnu++14
@@ -146,7 +152,7 @@ build CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.o: CXX_COMPILER__p4lab
 #############################################
 # Link the executable p4laboratorio0
 
-build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o CMakeFiles/p4laboratorio0.dir/src/Huesped.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.o
+build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtHabitacion.cpp.o CMakeFiles/p4laboratorio0.dir/src/Habitacion.cpp.o CMakeFiles/p4laboratorio0.dir/src/Huesped.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReserva.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaGrupal.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtReservaIndividual.cpp.o CMakeFiles/p4laboratorio0.dir/src/Reserva.cpp.o CMakeFiles/p4laboratorio0.dir/src/ReservaIndividual.cpp.o CMakeFiles/p4laboratorio0.dir/src/ReservaGrupal.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   POST_BUILD = :

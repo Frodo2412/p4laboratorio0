@@ -6,15 +6,17 @@
 #define P4LABORATORIO0_DTHABITACION_H
 
 
+#include "../include/Habitacion.h"
+
 class DtHabitacion {
 private:
     int numero;
     float precio;
     int capacidad;
 public:
-    DtHabitacion();
-
     DtHabitacion(int, float, int);
+
+    DtHabitacion(Habitacion *);
 
     int getNumero();
 

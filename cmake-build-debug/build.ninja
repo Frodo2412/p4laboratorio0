@@ -90,6 +90,12 @@ build CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o: CXX_COMPILER_
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/datatypes
 
+build CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o: CXX_COMPILER__p4laboratorio0_Debug /home/brunolemus/facultad/p4laboratorio0/datatypes/DtFecha.cpp || cmake_object_order_depends_target_p4laboratorio0
+  DEP_FILE = CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
+  OBJECT_FILE_DIR = CMakeFiles/p4laboratorio0.dir/datatypes
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target p4laboratorio0
@@ -98,7 +104,7 @@ build CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o: CXX_COMPILER_
 #############################################
 # Link the executable p4laboratorio0
 
-build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o
+build p4laboratorio0: CXX_EXECUTABLE_LINKER__p4laboratorio0_Debug CMakeFiles/p4laboratorio0.dir/main.cpp.o CMakeFiles/p4laboratorio0.dir/src/Sistema.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/EstadoReserva.cpp.o CMakeFiles/p4laboratorio0.dir/datatypes/DtFecha.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/p4laboratorio0.dir
   POST_BUILD = :

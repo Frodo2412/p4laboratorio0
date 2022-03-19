@@ -13,6 +13,7 @@ private:
     int MAX_HUESPEDES = 10;
     DtHuesped huespedes[];
 public:
+    DtReservaGrupal();
     DtReservaGrupal(ReservaGrupal);
     DtHuesped* getHuespedes();
 };

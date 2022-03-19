@@ -24,5 +24,8 @@ int DtReserva::getHabitacion() {
     return this->Habitacion;
 }
 
-DtReserva::DtReserva(Reserva r) {
+DtReserva::DtReserva(Reserva r): codigo(r.getCodigo()), checkIn(r.getCheckIn()), checkOut(r.getCheckOut()), estado(r.getEstado()) {
+}
+
+DtReserva::DtReserva() {
 }

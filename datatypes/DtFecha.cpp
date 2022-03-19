@@ -15,3 +15,12 @@ int DtFecha::getMes() {
 int DtFecha::getAnio() {
     return anio;
 }
+
+DtFecha::DtFecha(int d, int m, int a) {
+    dia = d;
+    mes = m;
+    anio = a;
+}
+
+DtFecha::DtFecha() {
+}

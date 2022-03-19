@@ -29,3 +29,9 @@ void Huesped::setNombre(string nombre) {
 void Huesped::setFinger(bool esFinger) {
     this->esFinger = esFinger;
 }
+
+Huesped::Huesped() {
+    nombre = "";
+    email = "";
+    esFinger = false;
+}

@@ -4,6 +4,10 @@
 
 #include "DtHabitacion.h"
 
+DtHabitacion::DtHabitacion() {
+
+}
+
 DtHabitacion::DtHabitacion(int numero, float precio, int capacidad) {
     this->numero = numero;
     this->precio = precio;

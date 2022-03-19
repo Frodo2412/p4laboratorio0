@@ -4,6 +4,10 @@
 
 #include "DtHuesped.h"
 
+DtHuesped::DtHuesped() {
+
+}
+
 DtHuesped::DtHuesped(string name, string email, bool isFinger) {
     nombre = name;
     this->email = email;

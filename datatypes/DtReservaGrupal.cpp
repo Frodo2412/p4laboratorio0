@@ -8,6 +8,10 @@ DtReserva *DtReservaGrupal::getHuespedes() {
     return this->huespedes;
 }
 
+DtReservaGrupal::DtReservaGrupal() {
+
+}
+
 DtReservaGrupal::DtReservaGrupal(ReservaGrupal rg) {
     DtHuesped hues[MAX_HUESPEDES];
     this->huespedes = hues;

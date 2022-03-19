@@ -15,6 +15,7 @@ private:
     string email;
     bool esFinger;
 public:
+    Huesped();
     Huesped(string nombre, string email, bool esFinger);
 
     string getNombre();

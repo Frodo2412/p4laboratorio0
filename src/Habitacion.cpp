@@ -23,3 +23,9 @@ void Habitacion::setPrecio(float p) {
 void Habitacion::setCapacidad(int c) {
     capacidad = c;
 }
+
+Habitacion::Habitacion(int num, float pr, int cap) {
+    this->numero = num;
+    this->precio = pr;
+    this->capacidad = cap;
+}

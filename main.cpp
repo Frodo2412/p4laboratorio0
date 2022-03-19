@@ -6,10 +6,11 @@
 
 int main() {
     Sistema sistema;
-    sistema.agregarHabitacion(1, 1, 1);
-    sistema.agregarHabitacion(2, 3, 4);
+    sistema.agregarHuesped("Juan", "juna@gmail.com", true);
+    sistema.agregarHuesped("pedro", "pedro@gmail.com", true);
+    sistema.agregarHuesped("Jose", "pedro@gmail.com", true);
     int cont = 0;
-    DtHabitacion** habs = sistema.obtenerHabitaciones(cont);
+//    DtHuesped** habs = sistema.obtenerHuespedes(cont);
     std::cout << cont;
     return 0;
 }

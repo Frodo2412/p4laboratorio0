@@ -3,7 +3,12 @@
 
 #include "Habitacion.h"
 #include "utils.h"
+#include "Huesped.h"
 #include "../datatypes/DtHabitacion.h"
+#include "../datatypes/DtHuesped.h"
+#include "iostream"
+
+using namespace std;
 
 class Sistema {
 public:
@@ -11,11 +16,19 @@ public:
 
     void agregarHabitacion(int numero, float precio, int capacidad);
 
-    DtHabitacion** obtenerHabitaciones(int& cantHabitaciones);
+    void agregarHuesped(string nombre, string email, bool esFinger);
 
+    DtHabitacion **obtenerHabitaciones(int &cantHabitaciones);
+
+    DtHuesped **obtenerHuespedes(int &cantHuespedes);
 private:
+    bool isMailValido(string email);
+
     Habitacion *habitaciones[MAX_HABITACIONES];
-    int tope;
+    int cantHabitaciones;
+
+    Huesped *huespedes[MAX_HUESPEDES];
+    int cantHuespedes;
 
     bool numeroNoAsignadoAHabitacion(int numero);
 

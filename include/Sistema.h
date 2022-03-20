@@ -10,7 +10,20 @@
 using namespace std;
 
 class Sistema {
+private:
+    Habitacion *habitaciones[MAX_HABITACIONES];
+    Huesped *huespedes[MAX_HUESPEDES];
+    int cantHabitaciones;
+    int cantHuespedes;
+
+    bool isMailValido(string email);
+
+    bool numeroNoAsignadoAHabitacion(int numero);
+
+    bool hayEspacioParaHabitacion();
+
 public:
+
     Sistema();
 
     void agregarHabitacion(int numero, float precio, int capacidad);
@@ -18,19 +31,6 @@ public:
     void agregarHuesped(string nombre, string email, bool esFinger);
 
     DtHabitacion **obtenerHabitaciones(int &cantHabitaciones);
-
-private:
-    bool isMailValido(string email);
-
-    Habitacion *habitaciones[MAX_HABITACIONES];
-    int cantHabitaciones;
-
-    Huesped *huespedes[MAX_HUESPEDES];
-    int cantHuespedes;
-
-    bool numeroNoAsignadoAHabitacion(int numero);
-
-    bool hayEspacioParaHabitacion();
 };
 
 

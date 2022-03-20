@@ -9,6 +9,7 @@ Sistema::Sistema() {
         i++;
     }
     cantHabitaciones = 0;
+    cantHuespedes = 0;
 }
 
 void Sistema::agregarHuesped(string nombre, string email, bool esFinger) {

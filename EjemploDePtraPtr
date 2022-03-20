@@ -1,0 +1,13 @@
+DtHuesped **huesp = new DtHuesped *[10];
+    // huesp es un ptr-> ptr-> DtHuesped en este caso es: new (crea un puntero) de tipo DtHuesp* y esta creando una  
+    // array de esto (DtHuesped*) (es ptr a un tipo DtHuesped)
+    bool mePinta = true;
+    int i = 0;
+    cout << "Creando array" << endl;
+    while (mePinta) {
+        huesp[i] = new DtHuesped("Prueba", "algo", true);
+        mePinta = false;
+    }
+    cout << huesp[0]->getNombre() << endl;
+    delete huesp[0];
+    delete[] huesp;

@@ -6,6 +6,7 @@
 #define P4LABORATORIO0_DTHUESPED_H
 
 #include <iostream>
+#include "../include/Huesped.h"
 
 using namespace std;
 
@@ -28,6 +29,8 @@ public:
     void setNombre(string);
 
     void setEsFinger(bool);
+
+    Huesped *toCore();
 };
 
 

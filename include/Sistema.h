@@ -6,6 +6,8 @@
 #include "Huesped.h"
 #include "../datatypes/DtHabitacion.h"
 #include "iostream"
+#include "Reserva.h"
+#include "../datatypes/DtReserva.h"
 
 using namespace std;
 
@@ -15,22 +17,34 @@ public:
 
     void agregarHabitacion(int numero, float precio, int capacidad);
 
-    void agregarHuesped(string nombre, string email, bool esFinger);
-
     DtHabitacion **obtenerHabitaciones(int &cantHabitaciones);
 
+    void agregarHuesped(string nombre, string email, bool esFinger);
+
+    void registrarReserva(string email, DtReserva *reserva);
+
 private:
-    bool isMailValido(string email);
+    bool existsHuespedWithEmail(string email);
 
     Habitacion *habitaciones[MAX_HABITACIONES];
-    int cantHabitaciones;
+    int habitacionesOcupadas;
 
     Huesped *huespedes[MAX_HUESPEDES];
     int cantHuespedes;
 
-    bool numeroNoAsignadoAHabitacion(int numero);
+    Reserva *reservas[MAX_RESERVAS];
+    int cantReservas;
+
+    bool existsHabitacionWithNumero(int numero);
 
     bool hayEspacioParaHabitacion();
+
+    bool hayEspacioParaReserva();
+
+    Huesped *getHuespedWithEmail(string email);
+
+    Habitacion *getHabitacionWithNumero(int numero);
+
 };
 
 

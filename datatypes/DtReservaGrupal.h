@@ -9,14 +9,17 @@
 #include "DtReserva.h"
 #include "DtHuesped.h"
 #include "../include/utils.h"
+#include "../include/ReservaGrupal.h"
 
 class DtReservaGrupal : public DtReserva {
 private:
-    DtHuesped *huespedes[MAX_HUESPEDES];
+    DtHuesped **huespedes{};
 public:
-    DtReservaGrupal();
-    DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped*);
-    DtHuesped* getHuespedes();
+    DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped **);
+
+    DtHuesped **getHuespedes();
+
+    ReservaGrupal *toCore(Huesped *, class Habitacion *) override;
 };
 
 

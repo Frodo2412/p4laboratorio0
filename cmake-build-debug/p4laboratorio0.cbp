@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="p4laboratorio0"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="p4laboratorio0">
+				<Option output="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/p4laboratorio0" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 p4laboratorio0"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="p4laboratorio0/fast">
+				<Option output="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/p4laboratorio0" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-unknown-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-unknown-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 p4laboratorio0/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/renecruz/CLionProjects/p4laboratorio0/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtFecha.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtFecha.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReserva.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReserva.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaGrupal.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/DtReservaIndividual.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/datatypes/EstadoReserva.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/include/Habitacion.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/include/Reserva.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/include/ReservaIndividual.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/include/Sistema.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/include/utils.h">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/main.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/src/Habitacion.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/src/Reserva.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/src/ReservaIndividual.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/src/Sistema.cpp">
+			<Option target="p4laboratorio0"/>
+		</Unit>
+		<Unit filename="/home/renecruz/CLionProjects/p4laboratorio0/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

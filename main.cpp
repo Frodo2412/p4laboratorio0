@@ -3,14 +3,27 @@
 
 #include <iostream>
 #include "include/Sistema.h"
+#include "datatypes/DtReservaGrupal.h"
+#include "datatypes/DtReservaIndividual.h"
 
 int main() {
     Sistema sistema;
-    sistema.agregarHuesped("Juan", "juna@gmail.com", true);
+    DtFecha fecha1(1, 1, 2020);
+    DtFecha fecha2(1, 2, 2020);
     sistema.agregarHuesped("pedro", "pedro@gmail.com", true);
-    sistema.agregarHuesped("Jose", "pedro@gmail.com", true);
+    sistema.agregarHuesped("Jose", "jose@gmail.com", true);
+
+    sistema.agregarHabitacion(1, 100, 5);
+    sistema.agregarHabitacion(2, 100, 5);
+
+    DtHuesped **huespedes = new DtHuesped *[2];
+    DtReservaGrupal reservaGrupal(1, fecha1, fecha2, Cerrada, 1000, 1, huespedes);
+    sistema.registrarReserva("pedro@gmail.com", &reservaGrupal);
+
+    DtReservaIndividual reservaIndividual(2, fecha1, fecha2, Cerrada, 1000, 1, true);
+    sistema.registrarReserva("pedro@gmail.com", &reservaIndividual);
+
     int cont = 0;
-//    DtHuesped** habs = sistema.obtenerHuespedes(cont);
     std::cout << cont;
     return 0;
 }

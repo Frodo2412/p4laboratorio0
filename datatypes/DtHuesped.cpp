@@ -5,7 +5,9 @@
 #include "DtHuesped.h"
 
 DtHuesped::DtHuesped() {
-
+    this->nombre = "";
+    this->email = "";
+    this->esFinger = true;
 }
 
 DtHuesped::DtHuesped(string name, string email, bool isFinger) {
@@ -32,4 +34,8 @@ void DtHuesped::setNombre(string name) {
 
 void DtHuesped::setEsFinger(bool isFinger) {
     esFinger = isFinger;
+}
+
+Huesped *DtHuesped::toCore() {
+    return new Huesped(nombre, email, esFinger);
 }

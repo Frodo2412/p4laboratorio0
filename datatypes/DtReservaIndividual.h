@@ -7,16 +7,17 @@
 
 
 #include "DtReserva.h"
+#include "../include/ReservaIndividual.h"
 
 class DtReservaIndividual : public DtReserva {
 private:
     bool pagado;
 public:
-    DtReservaIndividual();
-
     DtReservaIndividual(int, DtFecha, DtFecha, EstadoReserva, float, int, bool);
 
     bool isPago();
+
+    ReservaIndividual *toCore(Huesped *, class Habitacion *) override;
 };
 
 

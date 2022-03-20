@@ -8,9 +8,9 @@
 
 class ReservaGrupal : public Reserva {
 private:
-    Huesped *huespedes[MAX_HUESPEDES]{};
+    Huesped **huespedes[MAX_HUESPEDES];
 public:
-    ReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, Huesped, Habitacion, Huesped *);
+    ReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, Huesped*, Habitacion*, Huesped **);
 
     float calcularCosto() override;
 };

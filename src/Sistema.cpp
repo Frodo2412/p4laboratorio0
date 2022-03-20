@@ -6,62 +6,59 @@ Sistema::Sistema() {
     while (i < MAX_HABITACIONES) {
         this->habitaciones[i] = nullptr;
         this->huespedes[i] = nullptr;
+        this->reservas[i] = nullptr;
         i++;
     }
-    cantHabitaciones = 0;
+    habitacionesOcupadas = 0;
+    cantHuespedes = 0;
+    cantReservas = 0;
 }
 
 void Sistema::agregarHuesped(string nombre, string email, bool esFinger) {
-    if (!isMailValido(email)) {
-        int i = 0;
-        bool salir = true;
-        while (salir) {
-            if (huespedes[i] == nullptr) {
-                salir = false;
-            } else
-                i++;
-        }
-        huespedes[i] = new Huesped(nombre, email, esFinger);
-    } else
-        throw std::invalid_argument("Email existente");
+    if (existsHuespedWithEmail(email))
+        throw std::invalid_argument("El numero de habitacion ya existe");
+    if (hayEspacioParaHabitacion()) {
+        huespedes[cantHuespedes] = new Huesped(nombre, email, esFinger);
+        cantHuespedes++;
+    }
 }
 
 void Sistema::agregarHabitacion(int numero, float precio, int capacidad) {
-    if (hayEspacioParaHabitacion() && numeroNoAsignadoAHabitacion(numero)) {
-        habitaciones[cantHabitaciones] = new Habitacion(numero, precio, capacidad);
-        cantHabitaciones++;
+    if (existsHabitacionWithNumero(numero))
+        throw std::invalid_argument("El numero de habitacion ya existe");
+    if (hayEspacioParaHabitacion()) {
+        habitaciones[habitacionesOcupadas] = new Habitacion(numero, precio, capacidad);
+        habitacionesOcupadas++;
     }
 }
 
-bool Sistema::numeroNoAsignadoAHabitacion(int numero) {
+bool Sistema::existsHabitacionWithNumero(int numero) {
     int i = 0;
-    bool res = true;
-    while (i < cantHabitaciones && res) {
+    bool res = false;
+    while (i < habitacionesOcupadas && !res) {
         if (habitaciones[i]->getNumero() == numero)
-            res = false;
+            res = true;
         i++;
     }
-    if (!res)
-        throw new std::invalid_argument("El numero de habitacion ya existe");
     return res;
 }
 
 bool Sistema::hayEspacioParaHabitacion() {
-    return cantHabitaciones < MAX_HABITACIONES;
+    return habitacionesOcupadas < MAX_HABITACIONES;
 }
 
 DtHabitacion **Sistema::obtenerHabitaciones(int &cantHabitaciones) {
-    DtHabitacion **habs = new DtHabitacion *[cantHabitaciones];
+    DtHabitacion **habs = new DtHabitacion *[habitacionesOcupadas];
     int i = 0;
-    while (i < cantHabitaciones) {
+    while (i < habitacionesOcupadas) {
         habs[i] = new DtHabitacion(this->habitaciones[i]);
         i++;
     }
-    cantHabitaciones = this->cantHabitaciones;
+    cantHabitaciones = habitacionesOcupadas;
     return habs;
 }
 
-bool Sistema::isMailValido(string email) {
+bool Sistema::existsHuespedWithEmail(string email) {
     int i = 0;
     bool aparece = false;
     while (huespedes[i] != nullptr && !aparece) {
@@ -71,4 +68,39 @@ bool Sistema::isMailValido(string email) {
         i++;
     }
     return aparece;
+}
+
+void Sistema::registrarReserva(string email, DtReserva *reserva) {
+    if (!existsHuespedWithEmail(email))
+        throw std::invalid_argument("No existe usuario con ese mail");
+    if (!existsHabitacionWithNumero(reserva->getHabitacion()))
+        throw std::invalid_argument("No existe habitacion con ese numero");
+    if (!hayEspacioParaReserva())
+        throw std::invalid_argument("No hay espacio para reservas");
+
+    Huesped *huesped = getHuespedWithEmail(email);
+    Habitacion *habitacion = getHabitacionWithNumero(reserva->getHabitacion());
+    Reserva *res = reserva->toCore(huesped, habitacion);
+    reservas[cantReservas] = res;
+    cantReservas++;
+}
+
+bool Sistema::hayEspacioParaReserva() {
+    return cantReservas < MAX_RESERVAS;
+}
+
+Huesped *Sistema::getHuespedWithEmail(string email) {
+    int i = 0;
+    while (huespedes[i]->getEmail() == email) {
+        i++;
+    }
+    return huespedes[i];
+}
+
+Habitacion *Sistema::getHabitacionWithNumero(int numero) {
+    int i = 0;
+    while (habitaciones[i]->getNumero() != numero) {
+        i++;
+    }
+    return habitaciones[i];
 }

@@ -6,7 +6,9 @@
 #define P4LABORATORIO0_DTRESERVA_H
 
 #include "DtFecha.h"
-#include "EstadoReserva.h"
+#include "../include/Habitacion.h"
+#include "../include/Huesped.h"
+#include "../include/Reserva.h"
 
 class DtReserva {
 protected:
@@ -28,6 +30,8 @@ public:
     float getCosto();
 
     int getHabitacion();
+
+    virtual Reserva *toCore(Huesped *, class Habitacion *) = 0;
 };
 
 

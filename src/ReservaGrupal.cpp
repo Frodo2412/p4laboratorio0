@@ -21,7 +21,10 @@ Huesped **ReservaGrupal::getHuespedes() {
     return this->huespedes;
 }
 
-DtReservaGrupal *ReservaGrupal::toDt() {
-    return new DtReservaGrupal(this->codigo, this->checkIn, this->checkOut, this->estado, this->calcularCosto(),
-                               this->habitacion->getNumero(), this->huespedes);
+ReservaGrupal::~ReservaGrupal() {
+    for (int i = 0; i < MAX_HUESPEDES; ++i) {
+        delete huespedes[i];
+    }
+    delete[]huespedes;
+    delete huesped;
 }

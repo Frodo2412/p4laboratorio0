@@ -26,3 +26,7 @@ Habitacion::Habitacion(int num, float pr, int cap) {
     this->precio = pr;
     this->capacidad = cap;
 }
+
+//DtHabitacion *Habitacion::toDt() {
+//    return new DtHabitacion(numero, precio, capacidad);
+//}

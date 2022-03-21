@@ -6,10 +6,11 @@
 #define P4LABORATORIO0_DTRESERVAGRUPAL_H
 
 
-#include "DtReserva.h"
-#include "DtHuesped.h"
 #include "../include/utils.h"
+#include "DtHuesped.h"
 #include "../include/ReservaGrupal.h"
+#include "DtReserva.h"
+
 
 class DtReservaGrupal : public DtReserva {
 private:
@@ -21,6 +22,8 @@ public:
     DtHuesped **getHuespedes();
 
     ReservaGrupal *toCore(Huesped *, class Habitacion *) override;
+
+    ~DtReservaGrupal();
 };
 
 

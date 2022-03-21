@@ -11,8 +11,8 @@ DtHuesped **DtReservaGrupal::getHuespedes() {
 ReservaGrupal *DtReservaGrupal::toCore(Huesped *huesped, class Habitacion *hab) {
     auto **hues = new Huesped *[MAX_HUESPEDES];
     int i = 0;
-    while (i < MAX_HUESPEDES && this->huespedes[i] != nullptr) {
-        hues[i] = this->huespedes[i]->toCore();
+    while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+        hues[i] = huespedes[i]->toCore();
         i++;
     }
     return new ReservaGrupal(this->codigo, this->checkIn, this->checkOut, Abierta, huesped, hab, hues);
@@ -34,3 +34,10 @@ DtReservaGrupal::DtReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, 
     this->huespedes = dtHues;
 }
 
+
+DtReservaGrupal::~DtReservaGrupal() {
+    for (int i = 0; i < MAX_HUESPEDES; ++i) {
+        delete huespedes[i];
+    }
+    delete[]huespedes;
+}

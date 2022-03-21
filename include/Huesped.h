@@ -4,6 +4,7 @@
 
 #include <string>
 
+
 using namespace std;
 
 class Huesped {
@@ -23,6 +24,8 @@ public:
     void setNombre(string nombre);
 
     void setFinger(bool esFinger);
+
+//    DtHuesped *toDt();
 };
 
 

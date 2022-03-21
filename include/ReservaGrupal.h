@@ -16,6 +16,9 @@ public:
 
     Huesped **getHuespedes();
 
+
+    ~ReservaGrupal();
+
 };
 
 

@@ -25,3 +25,7 @@ void Huesped::setNombre(string nombre) {
 void Huesped::setFinger(bool esFinger) {
     this->esFinger = esFinger;
 }
+
+//DtHuesped *Huesped::toDt() {
+//    return new DtHuesped(nombre, email, esFinger);
+//}

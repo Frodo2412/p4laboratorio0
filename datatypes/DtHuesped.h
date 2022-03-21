@@ -31,7 +31,9 @@ public:
     void setEsFinger(bool);
 
     Huesped *toCore();
+
+    string getEsFingerToString();
 };
 
-
+std::ostream &operator<<(std::ostream &, DtHuesped* huespedes[]);
 #endif //P4LABORATORIO0_DTHUESPED_H

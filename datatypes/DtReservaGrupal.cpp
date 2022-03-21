@@ -36,3 +36,28 @@ DtReservaGrupal::~DtReservaGrupal() {
     }
     delete[]huespedes;
 }
+
+string DtReservaGrupal::getTipoReserva() {
+    return "Grupal";
+}
+
+string DtReservaGrupal::getHuespedesToString() {
+    int i = 0;
+    string res = "";
+    while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+        res.append(huespedes[i]->getNombre()).append(" - ").append(huespedes[i]->getEmail()).append(" - ").append(huespedes[i]->getEsFingerToString());
+        i++;
+    }
+    return res;
+}
+
+std::ostream &operator<<(std::ostream &os, DtReservaGrupal &reserva) {
+    os << "Tipo Reserva: " << reserva.getTipoReserva() << std::endl;
+    os << "Fecha check in: " << reserva.getCheckIn().format() << std::endl;
+    os << "Fecha check out: " << reserva.getCheckOut().format() << std::endl;
+    os << "Habitacion: " << reserva.getHabitacion() << std::endl;
+    os << "Costo: $" << reserva.getCosto() << std::endl;
+    os << "Huespedes: " << reserva.getHuespedesToString() << std::endl;
+
+    return os;
+}

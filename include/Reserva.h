@@ -37,6 +37,8 @@ public:
     Habitacion *getHabitacion();
 
     Huesped *getHuesped();
+
+//    virtual DtReserva *toDt() = 0;
 };
 
 

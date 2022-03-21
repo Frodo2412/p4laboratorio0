@@ -3,6 +3,7 @@
 #define P4LABORATORIO0_HABITACION_H
 
 
+
 class Habitacion {
 private:
     int numero;
@@ -16,6 +17,7 @@ public:
 
     void setPrecio(float);
     void setCapacidad(int);
+//    DtHabitacion *toDt();
 };
 
 

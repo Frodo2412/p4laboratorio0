@@ -26,3 +26,7 @@ ReservaIndividual::ReservaIndividual(int cod, Huesped *hues, Habitacion *hab, Dt
     this->pagado = false;
     this->estado = est;
 }
+
+TipoReserva ReservaIndividual::getTipoReserva() {
+    return Individual;
+}

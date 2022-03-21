@@ -39,3 +39,9 @@ DtHuesped::DtHuesped(Huesped *huesped) {
     this->email = huesped->getEmail();
     this->esFinger = huesped->isFinger();
 }
+
+DtHuesped::DtHuesped(string nombre, string email, bool esFinger) {
+    this->nombre = nombre;
+    this->email = email;
+    this->esFinger = esFinger;
+}

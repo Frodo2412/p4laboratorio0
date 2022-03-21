@@ -22,6 +22,8 @@ public:
     void registrarReserva(string email, DtReserva *reserva);
     DtReserva** obtenerReservas(DtFecha fecha, int& cantReservas);
 
+    ~Sistema();
+
 private:
     bool existsHuespedWithEmail(string email);
 

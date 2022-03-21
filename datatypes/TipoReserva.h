@@ -1,0 +1,9 @@
+#ifndef P4LABORATORIO0_TIPORESERVA_H
+#define P4LABORATORIO0_TIPORESERVA_H
+
+enum TipoReserva {
+    Individual,
+    Grupal
+};
+
+#endif //P4LABORATORIO0_TIPORESERVA_H

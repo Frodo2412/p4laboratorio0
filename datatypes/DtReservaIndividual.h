@@ -13,11 +13,14 @@ class DtReservaIndividual : public DtReserva {
 private:
     bool pagado;
 public:
-    DtReservaIndividual(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int habitacion, bool pagado);
+    DtReservaIndividual(int, DtFecha, DtFecha, EstadoReserva, float, int, bool);
+
+    DtReservaIndividual(ReservaIndividual *reservaIndividual);
 
     bool isPago();
 
     ReservaIndividual *toCore(Huesped *, class Habitacion *) override;
+
 };
 
 

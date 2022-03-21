@@ -14,16 +14,17 @@
 
 class DtReservaGrupal : public DtReserva {
 private:
-    DtHuesped **huespedes;
+    DtHuesped **huespedes = new DtHuesped *[MAX_HUESPEDES];
 public:
-    DtReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int Habitacion,
-                    Huesped **hues);
+    DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped **);
+
+    DtReservaGrupal(ReservaGrupal *reserva);
 
     DtHuesped **getHuespedes();
 
     ReservaGrupal *toCore(Huesped *, class Habitacion *) override;
 
-    ~DtReservaGrupal();
+    ~DtReservaGrupal() override;
 };
 
 

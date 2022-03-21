@@ -25,7 +25,6 @@ public:
 
     void setFinger(bool esFinger);
 
-//    DtHuesped *toDt();
 };
 
 

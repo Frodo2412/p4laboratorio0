@@ -20,6 +20,8 @@ public:
 
     DtHuesped(Huesped *huesped);
 
+    DtHuesped(string nombre, string email, bool esFinger);
+
     string getNombre();
 
     string getEmail();

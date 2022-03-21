@@ -5,7 +5,6 @@
 #include "../include/Habitacion.h"
 #include "../include/Huesped.h"
 #include "../include/Reserva.h"
-#include "EstadoReserva.h"
 
 class DtReserva {
 protected:
@@ -15,7 +14,11 @@ protected:
     float costo;
     int Habitacion;
 public:
-    DtReserva(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int habitacion);
+    DtReserva(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, float costo, int hab);
+
+    DtReserva(Reserva *reserva);
+
+    virtual ~DtReserva();
 
     int getCodigoReserva();
 

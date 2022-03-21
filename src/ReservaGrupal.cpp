@@ -1,14 +1,18 @@
 #include "../include/ReservaGrupal.h"
 
 ReservaGrupal::ReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, Huesped *reservante,
-                             Habitacion *habitacion, Huesped **inquilinos) {
+                             Habitacion *habitacion, DtHuesped **inquilinos) {
     this->codigo = codigo;
     this->checkIn = checkIn;
     this->checkOut = checkOut;
     this->estado = estado;
     this->huesped = reservante;
     this->habitacion = habitacion;
-    this->huespedes = inquilinos;
+    int i = 0;
+    while (inquilinos[i] != nullptr) {
+        this->huespedes[i] = inquilinos[i]->toCore();
+        i++;
+    }
 }
 
 float ReservaGrupal::calcularCosto() {
@@ -26,5 +30,8 @@ ReservaGrupal::~ReservaGrupal() {
         delete huespedes[i];
     }
     delete[]huespedes;
-    delete huesped;
+}
+
+TipoReserva ReservaGrupal::getTipoReserva() {
+    return Grupal;
 }

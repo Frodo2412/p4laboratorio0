@@ -19,6 +19,9 @@ public:
     bool isPago();
 
     void setPago();
+
+    TipoReserva getTipoReserva() override;
+
 };
 
 

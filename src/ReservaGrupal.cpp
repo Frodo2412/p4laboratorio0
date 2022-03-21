@@ -13,6 +13,10 @@ ReservaGrupal::ReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, Esta
         this->huespedes[i] = inquilinos[i]->toCore();
         i++;
     }
+    while(i < MAX_HUESPEDES) {
+        this->huespedes[i] = nullptr;
+        i++;
+    }
 }
 
 float ReservaGrupal::calcularCosto() {

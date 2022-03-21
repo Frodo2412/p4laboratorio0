@@ -38,8 +38,8 @@ int main() {
         i++;
     }
     delete[] reservas;
-    delete pedro;
-    delete jose;
+//    delete pedro;
+//    delete jose;
     delete[] huespedes;
     return 0;
 }
@@ -134,6 +134,9 @@ int main() {
 //    } while (opcion != 7);
 //    return 0;
 //}
+
+
+
 
 
 

@@ -4,7 +4,11 @@ DtReservaGrupal::DtReservaGrupal(int cod, DtFecha In, DtFecha Out, EstadoReserva
                                  DtHuesped **hues) : DtReserva(cod, In, Out, estado, costo, hab) {
     int i = 0;
     while (i < MAX_HUESPEDES && hues[i] != nullptr) {
-        this->huespedes = &hues[i];
+        this->huespedes[i] = hues[i];
+        i++;
+    }
+    while (i < MAX_HUESPEDES) {
+        this->huespedes[i] = nullptr;
         i++;
     }
 }
@@ -30,4 +34,11 @@ DtReservaGrupal::DtReservaGrupal(ReservaGrupal *reserva) : DtReserva(reserva) {
 }
 
 
-DtReservaGrupal::~DtReservaGrupal() {}
+DtReservaGrupal::~DtReservaGrupal() {
+    int i = 0;
+    while(i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+        delete huespedes[i];
+        i++;
+    }
+    delete [] huespedes;
+}

@@ -58,16 +58,6 @@ DtHabitacion **Sistema::obtenerHabitaciones(int &cantHabitaciones) {
     return habs;
 }
 
-DtHuesped **Sistema::obtenerHuespedes(int &cantHuespedes) {
-    DtHuesped **hues = new DtHuesped *[cantHuespedes];
-    int i = 0;
-    while(i < cantHuespedes){
-        hues[i] = new DtHuesped(huespedes[i]->getNombre(),huespedes[i]->getEmail(),huespedes[i]->isFinger());
-        i++;
-    }
-    cantHuespedes = this->cantHuespedes;
-    return hues;
-}
 
 bool Sistema::existsHuespedWithEmail(string email) {
     int i = 0;

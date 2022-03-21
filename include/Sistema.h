@@ -6,7 +6,7 @@
 #include "Reserva.h"
 #include "../datatypes/DtReserva.h"
 #include "../datatypes/DtHabitacion.h"
-#include "../datatypes/DtHuesped.h"
+
 
 using namespace std;
 

@@ -2,13 +2,13 @@
 #include "../include/Sistema.h"
 
 Sistema::Sistema() {
-    int i = 0;
-    while (i < MAX_HABITACIONES) {
-        this->habitaciones[i] = nullptr;
-        this->huespedes[i] = nullptr;
-        this->reservas[i] = nullptr;
-        i++;
-    }
+//    int i = 0;
+//    while (i < MAX_HABITACIONES) {
+//        this->habitaciones[i] = nullptr;
+//        this->huespedes[i] = nullptr;
+//        this->reservas[i] = nullptr;
+//        i++;
+//    }
     habitacionesOcupadas = 0;
     cantHuespedes = 0;
     cantReservas = 0;
@@ -51,7 +51,7 @@ DtHabitacion **Sistema::obtenerHabitaciones(int &cantHabitaciones) {
     DtHabitacion **habs = new DtHabitacion *[habitacionesOcupadas];
     int i = 0;
     while (i < habitacionesOcupadas) {
-        habs[i] = new DtHabitacion(this->habitaciones[i]);
+        habs[i] = new DtHabitacion(habitaciones[i]->getNumero(),habitaciones[i]->getPrecio(),habitaciones[i]->getCapacidad());
         i++;
     }
     cantHabitaciones = habitacionesOcupadas;
@@ -91,7 +91,7 @@ bool Sistema::hayEspacioParaReserva() {
 
 Huesped *Sistema::getHuespedWithEmail(string email) {
     int i = 0;
-    while (huespedes[i]->getEmail() == email) {
+    while (huespedes[i]->getEmail() != email) {
         i++;
     }
     return huespedes[i];

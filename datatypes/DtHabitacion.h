@@ -16,13 +16,15 @@ private:
 public:
     DtHabitacion(int, float, int);
 
-    DtHabitacion(Habitacion *);
+//    DtHabitacion(Habitacion *);
 
     int getNumero();
 
     float getPrecio();
 
     int getCapacidad();
+
+    Habitacion *toCore();
 };
 
 #endif //P4LABORATORIO0_DTHABITACION_H

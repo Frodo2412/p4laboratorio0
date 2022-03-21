@@ -22,8 +22,12 @@ int DtHabitacion::getCapacidad() {
     return this->capacidad;
 }
 
-DtHabitacion::DtHabitacion(Habitacion *h) {
-    this->numero = h->getNumero();
-    this->capacidad = h->getCapacidad();
-    this->precio = h->getPrecio();
+//DtHabitacion::DtHabitacion(Habitacion *h) {
+//    this->numero = h->getNumero();
+//    this->capacidad = h->getCapacidad();
+//    this->precio = h->getPrecio();
+//}
+
+Habitacion *DtHabitacion::toCore() {
+    return new Habitacion(numero, precio, capacidad);
 }

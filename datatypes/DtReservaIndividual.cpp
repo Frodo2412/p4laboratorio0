@@ -20,6 +20,6 @@ DtReservaIndividual::DtReservaIndividual(int cod, DtFecha In, DtFecha Out, Estad
     this->pagado = pag;
 }
 
-ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, struct Habitacion *hab) {
+ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, class Habitacion *hab) {
     return new ReservaIndividual(this->codigo, huesped, hab, this->checkIn, this->checkOut, Abierta);
 }

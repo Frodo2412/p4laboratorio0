@@ -19,6 +19,8 @@ public:
     bool isPago();
 
     void setPago();
+
+//    DtReservaIndividual *toDt() override
 };
 
 

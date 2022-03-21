@@ -1,13 +1,11 @@
 #ifndef P4LABORATORIO0_SISTEMA_H
 #define P4LABORATORIO0_SISTEMA_H
 
-#include "Habitacion.h"
 #include "utils.h"
-#include "Huesped.h"
-#include "../datatypes/DtHabitacion.h"
 #include "iostream"
 #include "Reserva.h"
 #include "../datatypes/DtReserva.h"
+#include "../datatypes/DtHabitacion.h"
 
 using namespace std;
 
@@ -26,13 +24,13 @@ public:
 private:
     bool existsHuespedWithEmail(string email);
 
-    Habitacion *habitaciones[MAX_HABITACIONES];
+    Habitacion **habitaciones = new Habitacion* [MAX_HABITACIONES];
     int habitacionesOcupadas;
 
-    Huesped *huespedes[MAX_HUESPEDES];
+    Huesped **huespedes = new Huesped*[MAX_HUESPEDES];
     int cantHuespedes;
 
-    Reserva *reservas[MAX_RESERVAS];
+    Reserva **reservas = new Reserva*[MAX_RESERVAS];
     int cantReservas;
 
     bool existsHabitacionWithNumero(int numero);

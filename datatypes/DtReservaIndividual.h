@@ -21,7 +21,10 @@ public:
 
     ReservaIndividual *toCore(Huesped *, class Habitacion *) override;
 
+    std::string isPagoToString();
+
+    std::string getTipoReserva();
 };
 
-
+std::ostream &operator<<(std::ostream &, DtReservaIndividual &);
 #endif //P4LABORATORIO0_DTRESERVAINDIVIDUAL_H

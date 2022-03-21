@@ -43,3 +43,7 @@ int DtFecha::operator-(DtFecha fecha) {
 
     return abs(thisFecha - ultimaFecha);
 }
+
+std::string DtFecha::format() {
+    return std::to_string(this->dia) + "/" + std::to_string(this->mes) + "/" + std::to_string(this->anio);
+}

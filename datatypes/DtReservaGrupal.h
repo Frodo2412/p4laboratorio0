@@ -27,5 +27,10 @@ public:
     ~DtReservaGrupal() override;
 };
 
+    string getTipoReserva();
+
+    string getHuespedesToString();
+};
+std::ostream &operator<<(std::ostream &, DtReservaGrupal &);
 
 #endif //P4LABORATORIO0_DTRESERVAGRUPAL_H

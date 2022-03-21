@@ -18,11 +18,14 @@ private:
 public:
     DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped **);
 
+    DtReservaGrupal(ReservaGrupal *reserva);
+
     DtHuesped **getHuespedes();
 
     ReservaGrupal *toCore(Huesped *, class Habitacion *) override;
 
-    ~DtReservaGrupal();
+    ~DtReservaGrupal() override;
+};
 
     string getTipoReserva();
 

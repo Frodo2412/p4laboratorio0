@@ -20,6 +20,9 @@ public:
     void agregarHuesped(string nombre, string email, bool esFinger);
 
     void registrarReserva(string email, DtReserva *reserva);
+    DtReserva** obtenerReservas(DtFecha fecha, int& cantReservas);
+
+    ~Sistema();
 
 private:
     bool existsHuespedWithEmail(string email);

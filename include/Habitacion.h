@@ -17,7 +17,6 @@ public:
 
     void setPrecio(float);
     void setCapacidad(int);
-//    DtHabitacion *toDt();
 };
 
 

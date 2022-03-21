@@ -5,9 +5,9 @@
 #ifndef P4LABORATORIO0_RESERVA_H
 #define P4LABORATORIO0_RESERVA_H
 
-
 #include "../datatypes/DtFecha.h"
 #include "../datatypes/EstadoReserva.h"
+#include "../datatypes/TipoReserva.h"
 #include "Habitacion.h"
 #include "Huesped.h"
 
@@ -38,7 +38,9 @@ public:
 
     Huesped *getHuesped();
 
-//    virtual DtReserva *toDt() = 0;
+    virtual TipoReserva getTipoReserva() = 0;
+
+    virtual ~Reserva();
 };
 
 

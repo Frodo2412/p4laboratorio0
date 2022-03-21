@@ -1,14 +1,16 @@
 #include <stdexcept>
 #include "../include/Sistema.h"
+#include "../datatypes/DtReservaGrupal.h"
+#include "../datatypes/DtReservaIndividual.h"
 
 Sistema::Sistema() {
-//    int i = 0;
-//    while (i < MAX_HABITACIONES) {
-//        this->habitaciones[i] = nullptr;
-//        this->huespedes[i] = nullptr;
-//        this->reservas[i] = nullptr;
-//        i++;
-//    }
+    int i = 0;
+    while (i < MAX_HABITACIONES) {
+        this->habitaciones[i] = nullptr;
+        this->huespedes[i] = nullptr;
+        this->reservas[i] = nullptr;
+        i++;
+    }
     habitacionesOcupadas = 0;
     cantHuespedes = 0;
     cantReservas = 0;
@@ -51,7 +53,8 @@ DtHabitacion **Sistema::obtenerHabitaciones(int &cantHabitaciones) {
     DtHabitacion **habs = new DtHabitacion *[habitacionesOcupadas];
     int i = 0;
     while (i < habitacionesOcupadas) {
-        habs[i] = new DtHabitacion(habitaciones[i]->getNumero(),habitaciones[i]->getPrecio(),habitaciones[i]->getCapacidad());
+        habs[i] = new DtHabitacion(habitaciones[i]->getNumero(), habitaciones[i]->getPrecio(),
+                                   habitaciones[i]->getCapacidad());
         i++;
     }
     cantHabitaciones = habitacionesOcupadas;
@@ -103,4 +106,45 @@ Habitacion *Sistema::getHabitacionWithNumero(int numero) {
         i++;
     }
     return habitaciones[i];
+}
+
+DtReserva **Sistema::obtenerReservas(DtFecha fecha, int &cantReservas) {
+    DtReserva **reservas = new DtReserva *[MAX_RESERVAS];
+    int i = 0;
+    while (i < this->cantReservas) {
+        Reserva *res = this->reservas[i];
+        if (this->reservas[i]->getTipoReserva() == Individual) {
+            reservas[i] = new DtReservaIndividual(dynamic_cast<ReservaIndividual *>(res));
+        } else {
+            reservas[i] = new DtReservaGrupal(dynamic_cast<ReservaGrupal *>(res));
+        }
+        i++;
+    }
+    cantReservas = i;
+    while (i < MAX_RESERVAS) {
+        reservas[i] = nullptr;
+        i++;
+    }
+    return reservas;
+}
+
+Sistema::~Sistema() {
+    int i = 0;
+    while (i < MAX_RESERVAS && reservas[i] != nullptr) {
+        delete reservas[i];
+        i++;
+    }
+    i = 0;
+    while (i < MAX_HABITACIONES && habitaciones[i] != nullptr) {
+        delete habitaciones[i];
+        i++;
+    }
+    i = 0;
+    while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+        delete huespedes[i];
+        i++;
+    }
+    delete[] reservas;
+    delete[] habitaciones;
+    delete[] huespedes;
 }

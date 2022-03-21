@@ -20,7 +20,8 @@ public:
 
     void setPago();
 
-//    DtReservaIndividual *toDt() override
+    TipoReserva getTipoReserva() override;
+
 };
 
 

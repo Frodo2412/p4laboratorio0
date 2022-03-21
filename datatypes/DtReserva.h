@@ -1,7 +1,3 @@
-//
-// Created by unzip on 19/3/22.
-//
-
 #ifndef P4LABORATORIO0_DTRESERVA_H
 #define P4LABORATORIO0_DTRESERVA_H
 
@@ -18,6 +14,11 @@ protected:
     float costo;
     int Habitacion;
 public:
+    DtReserva(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, float costo, int hab);
+
+    DtReserva(Reserva *reserva);
+
+    virtual ~DtReserva();
 
     int getCodigoReserva();
 

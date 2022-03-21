@@ -5,18 +5,21 @@
 #include "Reserva.h"
 #include "Huesped.h"
 #include "utils.h"
+#include "../datatypes/DtHuesped.h"
 
 class ReservaGrupal : public Reserva {
 private:
     Huesped **huespedes = new Huesped *[MAX_HUESPEDES];
 public:
-    ReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, Huesped *, Habitacion *, Huesped **);
+    ReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, Huesped *, Habitacion *, DtHuesped **);
 
     float calcularCosto() override;
 
-    ~ReservaGrupal();
+    Huesped **getHuespedes();
 
-//    DtReservaGrupal *toDt() override
+    ~ReservaGrupal() override;
+
+    TipoReserva getTipoReserva() override;
 };
 
 

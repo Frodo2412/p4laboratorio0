@@ -18,7 +18,9 @@ private:
 public:
     DtHuesped();
 
-    DtHuesped(string, string, bool);
+    DtHuesped(Huesped *huesped);
+
+    DtHuesped(string nombre, string email, bool esFinger);
 
     string getNombre();
 

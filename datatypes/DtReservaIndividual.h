@@ -15,6 +15,8 @@ private:
 public:
     DtReservaIndividual(int, DtFecha, DtFecha, EstadoReserva, float, int, bool);
 
+    DtReservaIndividual(ReservaIndividual *reservaIndividual);
+
     bool isPago();
 
     ReservaIndividual *toCore(Huesped *, class Habitacion *) override;

@@ -23,7 +23,11 @@ public:
     ReservaGrupal *toCore(Huesped *, class Habitacion *) override;
 
     ~DtReservaGrupal();
-};
 
+    string getTipoReserva();
+
+    string getHuespedesToString();
+};
+std::ostream &operator<<(std::ostream &, DtReservaGrupal &);
 
 #endif //P4LABORATORIO0_DTRESERVAGRUPAL_H

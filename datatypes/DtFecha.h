@@ -6,6 +6,8 @@
 #define P4LABORATORIO0_DTFECHA_H
 
 
+#include <string>
+
 class DtFecha {
 private:
     int dia{};
@@ -23,6 +25,8 @@ public:
     int getAnio();
 
     int operator-(DtFecha);
+
+    std::string format();
 };
 
 

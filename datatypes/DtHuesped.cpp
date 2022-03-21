@@ -3,6 +3,7 @@
 //
 
 #include "DtHuesped.h"
+#include "../include/utils.h"
 
 DtHuesped::DtHuesped() {
     this->nombre = "";
@@ -34,6 +35,26 @@ void DtHuesped::setNombre(string name) {
 
 void DtHuesped::setEsFinger(bool isFinger) {
     esFinger = isFinger;
+}
+
+std::ostream &operator<<(std::ostream &os, DtHuesped* huespedes[]) {
+    int i = 0;
+    string res;
+    while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+        res = huespedes[i]->getNombre() + "-" + huespedes[i]->getEmail() + "-" + huespedes[i]->getEsFingerToString();
+    }
+    os << res << std::endl;
+
+    return os;
+}
+
+string DtHuesped::getEsFingerToString() {
+    string res;
+    if (esFinger) {
+        res = "es Finger";
+    } else
+        res = "";
+    return res;
 }
 
 Huesped *DtHuesped::toCore() {

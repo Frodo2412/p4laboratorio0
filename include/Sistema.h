@@ -6,6 +6,7 @@
 #include "Reserva.h"
 #include "../datatypes/DtReserva.h"
 #include "../datatypes/DtHabitacion.h"
+#include "../datatypes/DtHuesped.h"
 
 using namespace std;
 
@@ -16,6 +17,8 @@ public:
     void agregarHabitacion(int numero, float precio, int capacidad);
 
     DtHabitacion **obtenerHabitaciones(int &cantHabitaciones);
+
+    DtHuesped **obtenerHuespedes(int &cantHuespedes);
 
     void agregarHuesped(string nombre, string email, bool esFinger);
 

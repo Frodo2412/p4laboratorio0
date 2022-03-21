@@ -10,9 +10,6 @@ bool DtReservaIndividual::isPago() {
     return this->pagado;
 }
 
-ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, struct Habitacion *hab) {
-    return new ReservaIndividual(this->codigo, huesped, hab, this->checkIn, this->checkOut, Abierta);
-}
 
 DtReservaIndividual::DtReservaIndividual(ReservaIndividual *reserva) : DtReserva(reserva) {
     this->pagado = reserva->isPago();

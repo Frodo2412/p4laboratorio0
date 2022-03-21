@@ -6,9 +6,6 @@
 #include "datatypes/DtReservaGrupal.h"
 #include "datatypes/DtReservaIndividual.h"
 
-DtHuesped *getHuespedBuscado(string basicString);
-
-bool isHuespedRepetido(DtHuesped *huesped, DtHuesped **huespedes);
 
 int main() {
     Sistema hub;
@@ -28,7 +25,7 @@ int main() {
                 cin >> name;
                 cout << "Cual es su email?" << endl;
                 cin >> mail;
-                while (fing == 0) {
+                do {
                     cout << "Es finger? (1-Si, 2-No)" << endl;
                     cin >> fing;
                     switch (fing) {
@@ -40,10 +37,9 @@ int main() {
                             break;
                         default:
                             cout << "Valor no aceptado, intentelo de nuevo." << endl;
-                            fing = 0;
                             break;
                     }
-                }
+                } while (fing != 1 && fing != 2);
                 hub.agregarHuesped(name, mail, isFinger);
                 cout << "Nuevo huesped agregado" << endl;
                 break;
@@ -62,37 +58,50 @@ int main() {
                 cout << "Nueva habitacion agregada" << endl;
                 break;
             }
-            case 3:
-//                hub.obtenerHuespedes()
-
+            case 3: {
+                int cantHuesp = 0;
+                DtHuesped **huespedesAux = hub.obtenerHuespedes(cantHuesp);
+                for (int i = 0; i < cantHuesp; ++i) {
+                    cout << huespedesAux[i] << endl;
+                }
+                for (int j = 0; j < cantHuesp; ++j) {
+                    delete huespedesAux[j];
+                }
+                delete[]huespedesAux;
                 break;
-
+            }
             case 4: {
-                int cantidadHab;
+                int cantidadHab = 0;
                 DtHabitacion **habitaciones = hub.obtenerHabitaciones(cantidadHab);
                 cout << "Las habitaciones son:" << endl;
                 for (int i = 0; i < cantidadHab; i++) {
                     cout << habitaciones[i] << endl;
                 }
+                for (int j = 0; j < cantidadHab; ++j) {
+                    delete habitaciones[j];
+                }
+                delete[]habitaciones;
                 break;
             }
             case 5: {
                 string mail;
-                string tipoReserva;
+                int tipoReserva;
 
-                cout << "ingrese el mail del reservante" << endl;
+                cout << "Ingrese el mail del reservante:" << endl;
                 cin >> mail;
 
                 int dia1, dia2, mes1, mes2, anio1, anio2, codigo, hab;
-                cout << "para continuar y agendar su reserva por favor ingrese el dia de check in" << endl;
+                cout << "Para continuar y agendar su reserva por favor ingrese la fecha de check in" << endl;
+                cout << "Ingrese el dia:" << endl;
                 cin >> dia1;
-                cout << "ingrese el mes" << endl;
+                cout << "ingrese el mes:" << endl;
                 cin >> mes1;
-                cout << "ingrese el anio" << endl;
+                cout << "ingrese el anio:" << endl;
                 cin >> anio1;
                 DtFecha fecha1 = DtFecha(dia1, mes1, anio1);
 
-                cout << "para continuar y agendar su reserva por favor ingrese el dia de check out" << endl;
+                cout << "Ahora por favor ingrese la fecha de check out" << endl;
+                cout << "Ingrese el dia:" << endl;
                 cin >> dia2;
                 cout << "ingrese el mes" << endl;
                 cin >> mes2;
@@ -100,74 +109,129 @@ int main() {
                 cin >> anio2;
                 DtFecha fecha2 = DtFecha(dia2, mes2, anio2);
 
-                cout << "ingrese el codigo de su reserva" << endl;
+                cout << "Ingrese un codigo (en numeros) que identificaran su reserva:" << endl;
                 cin >> codigo;
 
-                cout << "ingrese el numero de habitacion" << endl;
+                cout << "Ingrese el numero de habitacion que quiere reservar:" << endl;
                 cin >> hab;
 
-                int cantidadHabitaciones;
+                int cantidadHabitaciones = 0;
                 DtHabitacion **habitaciones = hub.obtenerHabitaciones(cantidadHabitaciones);
                 int i = 0;
-                int precio = -1;
-                while (i < cantidadHabitaciones && precio == -1) {
+                float precio = -1;
+                while (i < cantidadHabitaciones) {
                     if (habitaciones[i]->getNumero() == hab) {
                         precio = habitaciones[i]->getPrecio();
-                    }
-                }
-                if (precio != -1) {
-                    cout << "la reserva es grupal o individual? marque g por grupal e i por individual" << endl;
-                    cin >> tipoReserva;
-                    if (tipoReserva == "i") {
-                        DtReservaIndividual *individual = new DtReservaIndividual(codigo, fecha1, fecha2, Abierta,
-                                                                                  precio, hab, false);
-                        hub.registrarReserva(mail, individual);
-                        cout << "La reserva fue hecha con exito" << endl;
-                        cout << *individual << endl;
-                    } else if (tipoReserva == "g") {
-                        DtHuesped **huespedes = new DtHuesped *[MAX_HUESPEDES];
-                        int iter = 0;
-                        int siOno = 1;
-                        string email;
-                        while (siOno) {
-//                            cout << "escriba el email de un huesped" << endl;
-//                            cin >> email;
-//                            DtHuesped *maybeHuesped = getHuespedBuscado(hub, email);
-//                            if (maybeHuesped != nullptr) {
-//                                if (isHuespedRepetido(maybeHuesped, huespedes))
-//                                    cout << "el huesped que acaba de ingresar ya se encuentra en esta reserva" << endl;
-//                                else
-//                                    huespedes[i] = maybeHuesped;
-//                            } else {
-//                                cout << "no se encontro a un huesped con el email ingresado" << endl;
-//                            }
-//                            cout << "desea ingresar a otro huesped? (1 - Si, 0 - No)" << endl;
-//                            cin >> siOno;
-//                        }
-//                        DtReservaGrupal *grupal = new DtReservaGrupal(codigo, fecha1, fecha2, Abierta, precio, hab,
-//                                                                      huespedes);
-//                        hub.registrarReserva(mail, grupal);
-//                        cout << "La reserva fue hecha con exito" << endl;
-//                        cout << *grupal << endl;
-
-                        }
-                    } else {
-                        cout << "Valor no aceptado, intentelo de nuevo." << endl;
                         break;
                     }
-                } else {
-                    cout << "no se encontro esa habitacion" << endl;
-                    break;
+                    i++;
                 }
+                do {
+                    cout << "Seleccione el tipo de reserva (1- Individual, 2- Grupal)" << endl;
+                    cin >> tipoReserva;
+                    switch (tipoReserva) {
+                        case 1: {
+                            bool isOk = true;
+                            auto *individual = new DtReservaIndividual(codigo, fecha1, fecha2,
+                                                                                      Abierta,
+                                                                                      precio, hab, false);
+                            try {
+                                hub.registrarReserva(mail, individual);
+                            } catch (std::invalid_argument ex) {
+                                cout << ex.what() << endl << "Intentelo de nuevo" << endl;
+                                isOk = false;
+                            }
+                            if (isOk) {
+                                cout << "La reserva fue hecha con exito" << endl;
+                                cout << *individual << endl;
+                            }
+                            delete individual;
+                            break;
+                        }
+                        case 2: {
+                            auto **huespedes = new DtHuesped *[MAX_HUESPEDES];
+                            int siOno = 1;
+                            string email;
+                            cout
+                                    << "A continuacion se le van a pedir los emails de los huepedes que forman parte de la reserva"
+                                    << endl;
+                            do {
+                                cout << "escriba el email de un huesped" << endl;
+                                cin >> email;
+                                DtHuesped *maybeHuesped = nullptr;
+                                int cantHuespedes = 0;
+                                DtHuesped **huespedesAux = hub.obtenerHuespedes(cantHuespedes);
+                                i = 0;
+                                while (i < cantHuespedes) {
+                                    if (huespedesAux[i]->getEmail() == email) {
+                                        maybeHuesped = huespedesAux[i];
+                                        break;
+                                    }
+                                    i++;
+                                }
+                                if (maybeHuesped != nullptr) {
+                                    huespedes[i] = maybeHuesped;
+                                } else {
+                                    cout << "No se encontro a un huesped con el email ingresado" << endl;
+                                }
+                                for (int j = 0; j < cantHuespedes; ++j) {
+                                    delete huespedesAux[i];
+                                }
+                                delete[]huespedesAux;
+                                cout << "Desea ingresar a otro huesped? (1 - Si, 0 - No)" << endl;
+                                cin >> siOno;
+                            } while (siOno != 0);
+                            auto *grupal = new DtReservaGrupal(codigo, fecha1, fecha2, Abierta, precio, hab,
+                                                               huespedes);
+                            try {
+                                hub.registrarReserva(mail, grupal);
+                                cout << "La reserva fue hecha con exito" << endl;
+                                cout << *grupal << endl;
+                            } catch (std::invalid_argument ex) {
+                                cout << ex.what() << endl;
+                            }
+                            int j = 0;
+                            while (j < MAX_HUESPEDES && huespedes[i] != nullptr) {
+                                delete huespedes[i];
+                                j++;
+                            }
+                            delete[]huespedes;
+                        }
+                        default:
+                            cout << "Valor no aceptado, intentelo de nuevo." << endl;
+                            break;
+                    }
+                } while (tipoReserva != 1 && tipoReserva != 2);
+                for (int j = 0; j < cantidadHabitaciones; ++j) {
+                    delete habitaciones[i];
+                }
+                delete[]habitaciones;
             }
             case 6: {
-//                int cantReservas;
-//                DtReserva **reservas = hub.obtenerReservas(cantReservas);
-//                cout << "Las reservas son:" << endl;
-//                for (int i = 0; i < cantReservas; i++) {
-//                    cout << reservas[i] << endl;
-//                }
-//                break;
+                int cantReservas = 0;
+                int dia, mes, anio;
+                cout << "Para continuar seleccione la fecha de la que quiere obtener las reservas:" << endl;
+                cout << "Ingrese el dia:" << endl;
+                cin >> dia;
+                cout << "ingrese el mes:" << endl;
+                cin >> mes;
+                cout << "ingrese el anio:" << endl;
+                cin >> anio;
+                DtFecha fecha = DtFecha(dia, mes, anio);
+                DtReserva **reservas = hub.obtenerReservas(fecha, cantReservas);
+                cout << "Las reservas son:" << endl;
+                if (cantReservas == 0)
+                    cout << "No hay reservas en esa fecha" << endl;
+                else {
+                    for (int i = 0; i < cantReservas; i++) {
+                        cout << reservas[i] << endl;
+                    }
+                }
+                for (int j = 0; j < cantReservas; ++j) {
+                    delete reservas[j];
+                }
+                delete[]reservas;
+                break;
             }
             case 7: {
                 cout << "Gracias por utilizar nuestros sistemas" << endl << "Que tenga buen dia" << endl;

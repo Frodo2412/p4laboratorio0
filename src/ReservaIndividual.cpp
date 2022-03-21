@@ -27,3 +27,8 @@ ReservaIndividual::ReservaIndividual(int cod, Huesped *hues, Habitacion *hab, Dt
     this->estado = est;
 }
 
+DtReservaIndividual *ReservaIndividual::toDt() {
+    return new DtReservaIndividual(this->codigo, this->checkIn, this->checkOut, this->estado, this->calcularCosto(),
+                                   this->habitacion->getNumero(), this->pagado);
+}
+

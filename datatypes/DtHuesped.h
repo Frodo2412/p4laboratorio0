@@ -18,7 +18,7 @@ private:
 public:
     DtHuesped();
 
-    DtHuesped(string, string, bool);
+    DtHuesped(Huesped *huesped);
 
     string getNombre();
 

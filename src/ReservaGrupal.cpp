@@ -8,16 +8,20 @@ ReservaGrupal::ReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, Esta
     this->estado = estado;
     this->huesped = reservante;
     this->habitacion = habitacion;
-
-    int i = 0;
-    while (i < MAX_HUESPEDES && &inquilinos[i] != nullptr) {
-        this->huespedes[i] = &inquilinos[i];
-        i++;
-    }
+    this->huespedes = inquilinos;
 }
 
 float ReservaGrupal::calcularCosto() {
     float costoPorDia = this->habitacion->getPrecio();
-    int cantDias = this->getCheckOut() - this->getCheckIn();
+    float cantDias = this->getCheckOut() - this->getCheckIn();
     return costoPorDia * cantDias;
+}
+
+Huesped **ReservaGrupal::getHuespedes() {
+    return this->huespedes;
+}
+
+DtReservaGrupal *ReservaGrupal::toDt() {
+    return new DtReservaGrupal(this->codigo, this->checkIn, this->checkOut, this->estado, this->calcularCosto(),
+                               this->habitacion->getNumero(), this->huespedes);
 }

@@ -104,3 +104,14 @@ Habitacion *Sistema::getHabitacionWithNumero(int numero) {
     }
     return habitaciones[i];
 }
+
+DtReserva **Sistema::obtenerReservas(DtFecha fecha, int &cantReservas) {
+    DtReserva **reservas = new DtReserva *[cantReservas];
+    int i = 0;
+    while (i < cantReservas) {
+        reservas[i] = this->reservas[i]->toDt();
+        i++;
+    }
+    cantReservas = this->cantReservas;
+    return reservas;
+}

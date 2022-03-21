@@ -27,3 +27,12 @@ int DtReserva::getHabitacion() {
 DtFecha DtReserva::getCheckOut() {
     return this->checkOut;
 }
+
+DtReserva::DtReserva(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int Habitacion) {
+    this->codigo = codigo;
+    this->checkIn = checkIn;
+    this->checkOut = checkOut;
+    this->estado = estado;
+    this->costo = costo;
+    this->Habitacion = Habitacion;
+}

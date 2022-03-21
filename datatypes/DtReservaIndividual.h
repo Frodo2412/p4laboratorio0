@@ -13,7 +13,7 @@ class DtReservaIndividual : public DtReserva {
 private:
     bool pagado;
 public:
-    DtReservaIndividual(int, DtFecha, DtFecha, EstadoReserva, float, int, bool);
+    DtReservaIndividual(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int habitacion, bool pagado);
 
     bool isPago();
 

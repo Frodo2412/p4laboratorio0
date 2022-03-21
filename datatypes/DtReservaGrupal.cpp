@@ -8,20 +8,8 @@ DtHuesped **DtReservaGrupal::getHuespedes() {
     return this->huespedes;
 }
 
-DtReservaGrupal::DtReservaGrupal(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, float costo, int hab,
-                                 DtHuesped **hues) {
-    this->codigo = cod;
-    this->checkIn = In;
-    this->checkOut = Out;
-    this->estado = estado;
-    this->costo = costo;
-    this->Habitacion = hab;
-    this->huespedes = hues;
-
-}
-
 ReservaGrupal *DtReservaGrupal::toCore(Huesped *huesped, class Habitacion *hab) {
-    Huesped **hues = new Huesped *[MAX_HUESPEDES];
+    auto **hues = new Huesped *[MAX_HUESPEDES];
     int i = 0;
     while (i < MAX_HUESPEDES && this->huespedes[i] != nullptr) {
         hues[i] = this->huespedes[i]->toCore();
@@ -29,3 +17,20 @@ ReservaGrupal *DtReservaGrupal::toCore(Huesped *huesped, class Habitacion *hab) 
     }
     return new ReservaGrupal(this->codigo, this->checkIn, this->checkOut, Abierta, huesped, hab, hues);
 }
+
+DtReservaGrupal::DtReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo,
+                                 int Habitacion, Huesped **hues) : DtReserva(codigo, checkIn, checkOut, estado, costo,
+                                                                             Habitacion) {
+    DtHuesped **dtHues = new DtHuesped *[MAX_HUESPEDES];
+    int i = 0;
+    while (i < MAX_HUESPEDES && hues[i] != nullptr) {
+        dtHues[i] = new DtHuesped(hues[i]);
+        i++;
+    }
+    while (i < MAX_HUESPEDES) {
+        dtHues[i] = nullptr;
+        i++;
+    }
+    this->huespedes = dtHues;
+}
+

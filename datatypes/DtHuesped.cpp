@@ -10,12 +10,6 @@ DtHuesped::DtHuesped() {
     this->esFinger = true;
 }
 
-DtHuesped::DtHuesped(string name, string email, bool isFinger) {
-    nombre = name;
-    this->email = email;
-    esFinger = isFinger;
-}
-
 string DtHuesped::getEmail() {
     return email;
 }
@@ -38,4 +32,10 @@ void DtHuesped::setEsFinger(bool isFinger) {
 
 Huesped *DtHuesped::toCore() {
     return new Huesped(nombre, email, esFinger);
+}
+
+DtHuesped::DtHuesped(Huesped *huesped) {
+    this->nombre = huesped->getNombre();
+    this->email = huesped->getEmail();
+    this->esFinger = huesped->isFinger();
 }

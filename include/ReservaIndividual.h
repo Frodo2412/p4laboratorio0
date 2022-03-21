@@ -7,6 +7,7 @@
 
 
 #include "Reserva.h"
+#include "../datatypes/DtReservaIndividual.h"
 
 class ReservaIndividual : public Reserva {
 private:
@@ -19,6 +20,8 @@ public:
     bool isPago();
 
     void setPago();
+
+    DtReservaIndividual *toDt() override;
 };
 
 

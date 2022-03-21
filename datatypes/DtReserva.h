@@ -1,7 +1,3 @@
-//
-// Created by unzip on 19/3/22.
-//
-
 #ifndef P4LABORATORIO0_DTRESERVA_H
 #define P4LABORATORIO0_DTRESERVA_H
 
@@ -9,6 +5,7 @@
 #include "../include/Habitacion.h"
 #include "../include/Huesped.h"
 #include "../include/Reserva.h"
+#include "EstadoReserva.h"
 
 class DtReserva {
 protected:
@@ -18,6 +15,7 @@ protected:
     float costo;
     int Habitacion;
 public:
+    DtReserva(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int habitacion);
 
     int getCodigoReserva();
 

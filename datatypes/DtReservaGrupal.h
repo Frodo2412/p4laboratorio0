@@ -13,9 +13,10 @@
 
 class DtReservaGrupal : public DtReserva {
 private:
-    DtHuesped **huespedes{};
+    DtHuesped **huespedes;
 public:
-    DtReservaGrupal(int, DtFecha, DtFecha, EstadoReserva, float, int, DtHuesped **);
+    DtReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, EstadoReserva estado, float costo, int Habitacion,
+                    Huesped **hues);
 
     DtHuesped **getHuespedes();
 

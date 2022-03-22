@@ -23,20 +23,21 @@ public:
     void agregarHuesped(string nombre, string email, bool esFinger);
 
     void registrarReserva(string email, DtReserva *reserva);
-    DtReserva** obtenerReservas(DtFecha fecha, int& cantReservas);
+
+    DtReserva **obtenerReservas(DtFecha fecha, int &cantReservas);
 
     ~Sistema();
 
 private:
     bool existsHuespedWithEmail(string email);
 
-    Habitacion **habitaciones = new Habitacion* [MAX_HABITACIONES];
+    Habitacion **habitaciones = new Habitacion *[MAX_HABITACIONES];
     int habitacionesOcupadas;
 
-    Huesped **huespedes = new Huesped*[MAX_HUESPEDES];
+    Huesped **huespedes = new Huesped *[MAX_HUESPEDES];
     int cantHuespedes;
 
-    Reserva **reservas = new Reserva*[MAX_RESERVAS];
+    Reserva **reservas = new Reserva *[MAX_RESERVAS];
     int cantReservas;
 
     bool existsHabitacionWithNumero(int numero);

@@ -32,8 +32,12 @@ public:
 
     int getHabitacion();
 
+    virtual TipoReserva getTipoReserva() = 0;
+
     virtual Reserva *toCore(Huesped *, class Habitacion *) = 0;
 };
+
+std::ostream &operator<<(std::ostream &, DtReserva *);
 
 
 #endif //P4LABORATORIO0_DTRESERVA_H

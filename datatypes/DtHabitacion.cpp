@@ -4,6 +4,8 @@
 
 #include "DtHabitacion.h"
 
+using namespace std;
+
 DtHabitacion::DtHabitacion(int numero, float precio, int capacidad) {
     this->numero = numero;
     this->precio = precio;
@@ -22,12 +24,13 @@ int DtHabitacion::getCapacidad() {
     return this->capacidad;
 }
 
-//DtHabitacion::DtHabitacion(Habitacion *h) {
-//    this->numero = h->getNumero();
-//    this->capacidad = h->getCapacidad();
-//    this->precio = h->getPrecio();
-//}
-
 Habitacion *DtHabitacion::toCore() {
     return new Habitacion(numero, precio, capacidad);
+}
+
+std::ostream &operator<<(std::ostream &os, DtHabitacion *habitacion) {
+    os << "Número: " << habitacion->getNumero() << endl << "Precio por noche: " << habitacion->getPrecio() << endl
+       << "Capacidad: "
+       << habitacion->getCapacidad() << std::endl;
+    return os;
 }

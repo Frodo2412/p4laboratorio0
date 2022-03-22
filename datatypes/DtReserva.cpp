@@ -3,6 +3,9 @@
 //
 
 #include "DtReserva.h"
+#include "DtReservaIndividual.h"
+#include "DtReservaGrupal.h"
+#include <iostream>
 
 int DtReserva::getCodigoReserva() {
     return this->codigo;
@@ -47,3 +50,19 @@ DtReserva::DtReserva(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, flo
 }
 
 DtReserva::~DtReserva() {}
+
+std::ostream &operator<<(std::ostream &os, DtReserva *reserva) {
+    os << "Tipo Reserva: " << reserva->getTipoReserva() << std::endl;
+    os << "Fecha check in: " << reserva->getCheckIn().format() << std::endl;
+    os << "Fecha check out: " << reserva->getCheckOut().format() << std::endl;
+    os << "Habitacion: " << reserva->getHabitacion() << std::endl;
+    os << "Costo: $" << reserva->getCosto() << std::endl;
+
+    if (dynamic_cast<DtReservaIndividual *>(reserva)) {
+        os << dynamic_cast<DtReservaIndividual *>(reserva);
+    } else {
+        os << dynamic_cast<DtReservaGrupal *>(reserva);
+    }
+
+    return os;
+}

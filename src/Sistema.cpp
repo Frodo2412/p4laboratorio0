@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <utility>
 #include "../include/Sistema.h"
 #include "../datatypes/DtReservaGrupal.h"
 #include "../datatypes/DtReservaIndividual.h"
@@ -18,7 +19,7 @@ Sistema::Sistema() {
 
 void Sistema::agregarHuesped(string nombre, string email, bool esFinger) {
     if (existsHuespedWithEmail(email))
-        throw std::invalid_argument("El numero de habitacion ya existe");
+        throw std::invalid_argument("Ya existe usuario con ese email");
     if (hayEspacioParaHabitacion()) {
         huespedes[cantHuespedes] = new Huesped(nombre, email, esFinger);
         cantHuespedes++;
@@ -60,11 +61,12 @@ DtHabitacion **Sistema::obtenerHabitaciones(int &cantHabitaciones) {
     cantHabitaciones = habitacionesOcupadas;
     return habs;
 }
+
 DtHuesped **Sistema::obtenerHuespedes(int &cantHuespedes) {
-    DtHuesped **hues = new DtHuesped *[cantHuespedes];
+    DtHuesped **hues = new DtHuesped *[this->cantHuespedes];
     int i = 0;
-    while(i < cantHuespedes){
-        hues[i] = new DtHuesped(huespedes[i]->getNombre(),huespedes[i]->getEmail(),huespedes[i]->isFinger());
+    while (i < this->cantHuespedes) {
+        hues[i] = new DtHuesped(huespedes[i]->getNombre(), huespedes[i]->getEmail(), huespedes[i]->isFinger());
         i++;
     }
     cantHuespedes = this->cantHuespedes;

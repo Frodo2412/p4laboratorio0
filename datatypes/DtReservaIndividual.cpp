@@ -29,13 +29,8 @@ std::string DtReservaIndividual::isPagoToString() {
     return res;
 }
 
-std::ostream &operator<<(std::ostream &os, DtReservaIndividual &reserva) {
-    os << "Tipo Reserva:" << reserva.getTipoReserva() << std::endl;
-    os << "Fecha check in:" << reserva.getCheckIn().format() << std::endl;
-    os << "Fecha check out:" << reserva.getCheckOut().format() << std::endl;
-    os << "Habitacion: " << reserva.getHabitacion() << std::endl;
-    os << "Costo: $" << reserva.getCosto() << std::endl;
-    os << "Pagado: " << reserva.isPagoToString() << std::endl;
+std::ostream &operator<<(std::ostream &os, DtReservaIndividual *reserva) {
+    os << "Pagado: " << reserva->isPagoToString() << std::endl;
 
     return os;
 }
@@ -44,6 +39,6 @@ ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, class Habitacio
     return new ReservaIndividual(this->codigo, huesped, hab, this->checkIn, this->checkOut, Abierta);
 }
 
-std::string DtReservaIndividual::getTipoReserva() {
-    return "Individual";
+TipoReserva DtReservaIndividual::getTipoReserva() {
+    return Individual;
 }

@@ -5,7 +5,7 @@
 #ifndef P4LABORATORIO0_DTHABITACION_H
 #define P4LABORATORIO0_DTHABITACION_H
 
-
+#include <iostream>
 #include "../include/Habitacion.h"
 
 class DtHabitacion {
@@ -26,5 +26,7 @@ public:
 
     Habitacion *toCore();
 };
+
+std::ostream &operator<<(std::ostream &, DtHabitacion *habitacion);
 
 #endif //P4LABORATORIO0_DTHABITACION_H

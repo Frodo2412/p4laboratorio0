@@ -2,8 +2,9 @@
 OBJETOS = src/Habitacion.o src/Huesped.o src/Reserva.o src/ReservaGrupal.o \
  src/ReservaIndividual.o src/Sistema.o datatypes/DtReservaIndividual.o \
  datatypes/DtReservaGrupal.o datatypes/DtReserva.o \
- datatypes/DtHuesped.o datatypes/DtHabitacion.o datatypes/DtFecha.o \
- utils.o TipoReserva.o EstadoReserva.o
+ datatypes/DtHuesped.o datatypes/DtHabitacion.o datatypes/DtFecha.o
+
+AUX = utils.o TipoReserva.o EstadoReserva.o
 
 OBJRESERVA = datatypes/DtFecha.o EstadoReserva.o TipoReserva.o src/Habitacion.o src/Huesped.o
 
@@ -21,19 +22,19 @@ CC = g++
 FUENTES = main.cpp src/Habitacion.cpp src/Huesped.cpp \
  src/Reserva.cpp src/ReservaGrupal.cpp \
  src/ReservaIndividual.cpp src/Sistema.cpp \
- include/Habitacion.h include/Huesped include/Reserva.h \
+ include/Habitacion.h include/Huesped.h include/Reserva.h \
  include/ReservaIndividual.h include/ReservaGrupal.h \
  include/Sistema.h include/utils.h datatypes/DtFecha.h datatypes/DtFecha.cpp \
- datatypes/DtHabitacion.h datatypes/DtHabitacion.cpp datatypes/DtHuespedes.h \
- datatypes/DtHuespedes.cpp  datatypes/DtReserva.cpp datatypes/DtReserva.h \
+ datatypes/DtHabitacion.h datatypes/DtHabitacion.cpp datatypes/DtHuesped.h \
+ datatypes/DtHuesped.cpp  datatypes/DtReserva.cpp datatypes/DtReserva.h \
  datatypes/DtReservaGrupal.cpp datatypes/DtReservaGrupal.h datatypes/DtReservaIndividual.cpp \
  datatypes/DtReservaIndividual.h datatypes/EstadoReserva.h datatypes/TipoReserva.h
 
-ejec: $(OBJETOS) main.cpp Makefile
-	$(CC) $(OPCIONES) -c -o ejec main.cpp $(OBJETOS)
+ejec: $(OBJETOS) $(AUX) main.cpp Makefile
+	$(CC) $(OPCIONES) -o ejec main.cpp $(OBJETOS)
 
 Sistema.o: $(OBJSISTEMA) src/Sistema.cpp include/Sistema.h
-	$(CC) $(OPCIONES) $(OBJSISTEMA) -c -o Sistema.o Sistema.cpp
+	$(CC) $(OPCIONES) -c -o Sistema.o Sistema.cpp $(OBJSISTEMA)
 
 Habitacion.o: src/Habitacion.cpp include/Habitacion.h
 	$(CC) $(OPCIONES) -c -o Habitacion.o habitacion.cpp
@@ -42,30 +43,30 @@ Huesped.o: src/Huesped.cpp include/Huesped.h
 	$(CC) $(OPCIONES) -c -o Habitacion.o habitacion.cpp
 
 Reserva.o: $(OBJRESERVA) src/Reserva.cpp include/Reserva.h
-	$(CC) $(OPCIONES) $(OBJRESERVA) -c -o Reserva.o Reserva.cpp
+	$(CC) $(OPCIONES) -c -o Reserva.o Reserva.cpp $(OBJRESERVA)
 
 ReservaGrupal.o: $(OBJGRUPAL) src/ReservaGrupal.cpp include/ReservaGrupal.h
-	$(CC) $(OPCIONES) $(OBJGRUPAL) -c -o ReservaGrupal.o ReservaGrupal.cpp
+	$(CC) $(OPCIONES) -c -o ReservaGrupal.o ReservaGrupal.cpp $(OBJGRUPAL)
 
 ReservaIndividual.o: src/Reserva.o src/ReservaIndividual.cpp include/ReservaIndividual.h
-	$(CC) $(OPCIONES) src/Reserva.o -c -o ReservaIndividual.o ReservaIndividual.cpp
+	$(CC) $(OPCIONES) -c -o ReservaIndividual.o ReservaIndividual.cpp src/Reserva.o
 
 DtReserva.o: $(OBJDTRESERVA) datatypes/DtReserva.cpp datatypes/DtReserva.h
-	$(CC) $(OPCIONES) $(OBJDTRESERVA) -c -o DtReserva.o DtReserva.cpp
+	$(CC) $(OPCIONES) -c -o DtReserva.o DtReserva.cpp $(OBJDTRESERVA)
 
 DtReservaIndividual.o: datatypes/DtReserva.o src/ReservaIndividual.o datatypes/DtReservaIndividual.cpp datatypes/DtReservaIndividual.h
-	$(CC) $(OPCIONES) datatypes/DtReserva.o src/ReservaIndividual.o -c -o DtReservaIndividual.o DtReservaIndividual.cpp
+	$(CC) $(OPCIONES) -c -o DtReservaIndividual.o DtReservaIndividual.cpp datatypes/DtReserva.o src/ReservaIndividual.o
 
 DtReservaGrupal.o: $(OBJDTGRUPAL) datatypes/DtReservaGrupal.cpp datatypes/DtReserva.h
-	$(CC) $(OPCIONES) $(OBJDTGRUPAL) -c -o DtReservaGrupal.o DtReservaGrupal.cpp
+	$(CC) $(OPCIONES) -c -o DtReservaGrupal.o DtReservaGrupal.cpp $(OBJDTGRUPAL)
 
 
 DtHuesped.o: src/Huesped.o datatypes/DtHuesped.cpp datatypes/DtHuesped.h
-	 $(CC) $(OPCIONES) src/Huesped.o -c -o DtReservaGrupal.o DtReservaGrupal.cpp
+	 $(CC) $(OPCIONES) -c -o DtReservaGrupal.o DtReservaGrupal.cpp src/Huesped.o
 
 
 DtHabitacion.o: src/Habitacion.o datatypes/DtHabitacion.cpp datatypes/DtHabitacion.h
-	$(CC) $(OPCIONES) src/Habitacion.o -c -o DtHabitacion.o DtHabitacion.cpp
+	$(CC) $(OPCIONES) -c -o DtHabitacion.o DtHabitacion.cpp src/Habitacion.o
 
 
 DtFecha: datatypes/DtFecha.cpp datatypes/DtFecha.h
@@ -81,7 +82,7 @@ TipoReserva.o: datatypes/TipoReserva.h
 	$(CC) $(OPCIONES) -c -o TipoReserva.o datatypes/TipoReserva.h
 
 clean:
-	rm -f $(OBJETOS) ejec
+	rm -f $(OBJETOS) $(AUX) ejec
 
 rebuild:
 	make clean

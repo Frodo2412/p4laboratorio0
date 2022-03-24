@@ -1,6 +1,6 @@
 # p4laboratorio0
 
-Los comandos del makefile son ejecutar en el directorio de proyecto alguno de los siguientes comandos:
+Los comandos del makefile son para ejecutar en el directorio del proyecto alguno de los siguientes comandos:
 
   make              //Compila el proyecto (si es necesario) y crea el ejecutable "ejec" que se puede abrir con el comando ./ejec
   make clean        //Limpia lo compilado anterior

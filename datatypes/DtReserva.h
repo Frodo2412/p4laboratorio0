@@ -34,6 +34,8 @@ public:
 
     virtual TipoReserva getTipoReserva() = 0;
 
+    virtual string getTipoReservaToString() = 0;
+
     virtual Reserva *toCore(Huesped *, class Habitacion *) = 0;
 };
 

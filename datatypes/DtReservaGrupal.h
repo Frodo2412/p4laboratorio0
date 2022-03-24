@@ -28,6 +28,8 @@ public:
 
     TipoReserva getTipoReserva() override;
 
+    string getTipoReservaToString() override;
+
 };
 
 std::ostream &operator<<(std::ostream &, DtReservaGrupal *);

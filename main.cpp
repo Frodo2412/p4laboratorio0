@@ -37,18 +37,37 @@ bool leerBoolean() {
     }
 }
 
+bool leerBooleanParaContinuar() {
+    int ret;
+    cout << "ingrese 1 si quiere seguir ingresando huespedes, 0 en otro caso" << endl;
+    cin >> ret;
+    if (ret == 1)
+        return true;
+    else
+        return false;
+}
+
 void leerHuesped(Sistema &sistema) {
     string name, mail;
     bool isFinger;
     cout << "Cual es su nombre?" << endl;
     cin.ignore();
     getline(cin, name);
+//    while (name == "") {
+//        cout << "el nombre del huesped no puede ser vacio, ingrese el nombre nuevamente" << endl;
+//        cin.ignore();
+//        getline(cin, name);
+//    }
     cout << "Cual es su email?" << endl;
     cin >> mail;
     cout << "Es finger? (1-Si, 0-No)" << endl;
     isFinger = leerBoolean();
-    sistema.agregarHuesped(name, mail, isFinger);
-    cout << "Nuevo huesped agregado" << endl;
+    try {
+        sistema.agregarHuesped(name, mail, isFinger);
+        cout << "Nuevo huesped agregado" << endl;
+    } catch (invalid_argument) {
+        cout << "el mail que acaba de ingresar ya se encuentra registrado" << endl;
+    }
 }
 
 void leerHabitacion(Sistema &sistema) {
@@ -82,6 +101,8 @@ void emitirHabitaciones(Sistema &sistema) {
         cout << habitaciones[i] << endl;
         delete habitaciones[i];
     }
+    if (cantidadHab == 0)
+        cout << "No hay habitaciones registradas" << endl;
     delete[]habitaciones;
 }
 
@@ -131,27 +152,27 @@ void ingresarReserva(Sistema &sistema) {
                         << endl;
                 int cantHuespedes = 0;
                 DtHuesped **huespedesAux = sistema.obtenerHuespedes(cantHuespedes);
+                int agregados = 0;
                 do {
                     cout << "escriba el email de un huesped" << endl;
                     cin >> email;
                     DtHuesped *maybeHuesped = nullptr;
                     i = 0;
-                    while (i < cantHuespedes) {
-                        if (huespedesAux[i]->getEmail() == email) {
-                            maybeHuesped = huespedesAux[i];
-                            break;
-                        }
+                    while (i < cantHuespedes && huespedesAux[i] != nullptr) {
+                        if (huespedesAux[i]->getEmail() == email)
+                            maybeHuesped = huespedesAux[i]->copy();
                         i++;
                     }
                     if (maybeHuesped != nullptr) {
-                        huespedes[i] = maybeHuesped;
+                        huespedes[agregados] = maybeHuesped;
+                        agregados++;
                     } else {
                         cout << "No se encontro a un huesped con el email ingresado" << endl;
                     }
-                    siOno = leerBoolean();
+                    siOno = leerBooleanParaContinuar();
                 } while (siOno);
-                for (int j = 0; j < cantHuespedes; ++j) {
-                    delete huespedesAux[i];
+                for (int j = 0; j < cantHuespedes; j++) {
+                    delete huespedesAux[j];
                 }
                 delete[]huespedesAux;
                 auto *grupal = new DtReservaGrupal(codigo, fecha1, fecha2, Abierta, 0, hab, huespedes);
@@ -162,19 +183,20 @@ void ingresarReserva(Sistema &sistema) {
                     cout << ex.what() << endl;
                 }
                 int j = 0;
-                while (j < MAX_HUESPEDES && huespedes[i] != nullptr) {
-                    delete huespedes[i];
+                while (j < MAX_HUESPEDES && huespedes[j] != nullptr) {
+                    delete huespedes[j];
                     j++;
                 }
                 delete[]huespedes;
+                break;
             }
             default:
                 cout << "Valor no aceptado, intentelo de nuevo." << endl;
                 break;
         }
     } while (tipoReserva != 1 && tipoReserva != 2);
-    for (int j = 0; j < cantidadHabitaciones; ++j) {
-        delete habitaciones[i];
+    for (int j = 0; j < cantidadHabitaciones; j++) {
+        delete habitaciones[j];
     }
     delete[]habitaciones;
 }

@@ -42,3 +42,7 @@ ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, class Habitacio
 TipoReserva DtReservaIndividual::getTipoReserva() {
     return Individual;
 }
+
+string DtReservaIndividual::getTipoReservaToString() {
+    return "Individual";
+}

@@ -35,6 +35,8 @@ public:
     Huesped *toCore();
 
     string getEsFingerToString();
+
+    DtHuesped *copy();
 };
 
 std::ostream &operator<<(std::ostream &, DtHuesped *huespedes);

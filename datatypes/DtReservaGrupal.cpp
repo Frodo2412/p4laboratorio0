@@ -18,7 +18,7 @@ DtHuesped **DtReservaGrupal::getHuespedes() {
 }
 
 ReservaGrupal *DtReservaGrupal::toCore(Huesped *huesped, class Habitacion *hab) {
-    return new ReservaGrupal(this->codigo, this->checkIn, this->checkOut, Abierta, huesped, hab, this->getHuespedes());
+    return new ReservaGrupal(this->codigo, this->checkIn, this->checkOut, Abierta, huesped, hab, this->huespedes);
 }
 
 DtReservaGrupal::DtReservaGrupal(ReservaGrupal *reserva) : DtReserva(reserva) {
@@ -47,8 +47,20 @@ TipoReserva DtReservaGrupal::getTipoReserva() {
     return Grupal;
 }
 
-std::ostream &operator<<(std::ostream &os, DtReservaGrupal *reserva) {
-    os << "Huespedes: " << reserva->getHuespedes() << std::endl;
+string DtReservaGrupal::getTipoReservaToString() {
+    return "Grupal";
+}
 
+std::ostream &operator<<(std::ostream &os, DtReservaGrupal *reserva) {
+    DtHuesped** huespedes = reserva->getHuespedes();
+    int i = 0;
+    if (huespedes[i] != nullptr) {
+        os << "Huespedes: " << huespedes[i] << endl;
+        i++;
+        while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
+            os << huespedes[i] << endl;
+            i++;
+        }
+    }
     return os;
 }

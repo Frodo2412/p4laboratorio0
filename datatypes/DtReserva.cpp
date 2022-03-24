@@ -52,7 +52,7 @@ DtReserva::DtReserva(int cod, DtFecha In, DtFecha Out, EstadoReserva estado, flo
 DtReserva::~DtReserva() {}
 
 std::ostream &operator<<(std::ostream &os, DtReserva *reserva) {
-    os << "Tipo Reserva: " << reserva->getTipoReserva() << std::endl;
+    os << "Tipo Reserva: " << reserva->getTipoReservaToString() << std::endl;
     os << "Fecha check in: " << reserva->getCheckIn().format() << std::endl;
     os << "Fecha check out: " << reserva->getCheckOut().format() << std::endl;
     os << "Habitacion: " << reserva->getHabitacion() << std::endl;

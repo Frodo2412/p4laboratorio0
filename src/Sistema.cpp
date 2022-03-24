@@ -76,7 +76,7 @@ DtHuesped **Sistema::obtenerHuespedes(int &cantHuespedes) {
 bool Sistema::existsHuespedWithEmail(string email) {
     int i = 0;
     bool aparece = false;
-    while (huespedes[i] != nullptr && !aparece) {
+    while (huespedes[i] != NULL && !aparece) {
         if (huespedes[i]->getEmail() == email) {
             aparece = true;
         }

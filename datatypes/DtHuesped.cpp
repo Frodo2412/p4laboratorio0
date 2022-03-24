@@ -53,8 +53,14 @@ DtHuesped::DtHuesped(string nombre, string email, bool esFinger) {
     this->esFinger = esFinger;
 }
 
+DtHuesped *DtHuesped::copy() {
+    DtHuesped *huesped = new DtHuesped(this->nombre, this->email,
+                                       this->esFinger);
+    return huesped;
+}
+
 std::ostream &operator<<(std::ostream &os, DtHuesped *huesped) {
-    os << "Nombre: " << huesped->getNombre() << endl << "Email: " << huesped->getEmail() << endl << "Es finger: "
+    os << "Nombre: " << huesped->getNombre() << ", Email: " << huesped->getEmail() << ", Es finger: "
        << huesped->getEsFingerToString() << std::endl;
     return os;
 }

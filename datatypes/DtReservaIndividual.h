@@ -24,6 +24,8 @@ public:
     std::string isPagoToString();
 
     TipoReserva getTipoReserva() override;
+
+    string getTipoReservaToString() override;
 };
 
 std::ostream &operator<<(std::ostream &, DtReservaIndividual *);

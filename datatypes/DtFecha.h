@@ -26,6 +26,8 @@ public:
 
     int operator-(DtFecha);
 
+    bool operator <=(DtFecha);
+
     std::string format();
 };
 

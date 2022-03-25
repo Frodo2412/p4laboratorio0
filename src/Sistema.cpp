@@ -123,16 +123,19 @@ Habitacion *Sistema::getHabitacionWithNumero(int numero) {
 DtReserva **Sistema::obtenerReservas(DtFecha fecha, int &cantReservas) {
     DtReserva **reservas = new DtReserva *[MAX_RESERVAS];
     int i = 0;
+    cantReservas = 0;
     while (i < this->cantReservas) {
         Reserva *res = this->reservas[i];
-        if (this->reservas[i]->getTipoReserva() == Individual) {
-            reservas[i] = new DtReservaIndividual(dynamic_cast<ReservaIndividual *>(res));
-        } else {
-            reservas[i] = new DtReservaGrupal(dynamic_cast<ReservaGrupal *>(res));
+        if (res->getCheckIn() <= fecha && fecha <= res->getCheckOut()) {
+            if (this->reservas[i]->getTipoReserva() == Individual) {
+                reservas[cantReservas] = new DtReservaIndividual(dynamic_cast<ReservaIndividual *>(res));
+            } else {
+                reservas[cantReservas] = new DtReservaGrupal(dynamic_cast<ReservaGrupal *>(res));
+            }
+            cantReservas++;
         }
         i++;
     }
-    cantReservas = i;
     while (i < MAX_RESERVAS) {
         reservas[i] = nullptr;
         i++;

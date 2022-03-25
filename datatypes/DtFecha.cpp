@@ -4,7 +4,6 @@
 
 #include "DtFecha.h"
 #include <iostream>
-#include <cmath>
 
 int DtFecha::getDia() {
     return dia;
@@ -39,11 +38,15 @@ DtFecha::DtFecha() {
 int DtFecha::operator-(DtFecha fecha) {
 
     int thisFecha = this->anio * 365 + this->mes * 30 + this->dia;
-    int ultimaFecha = fecha.anio * 365 + fecha.mes * 30 + fecha.dia;
+    int ultimaFecha = fecha.getAnio() * 365 + fecha.getMes() * 30 + fecha.getDia();
 
-    return abs(thisFecha - ultimaFecha);
+    return thisFecha - ultimaFecha;
 }
 
 std::string DtFecha::format() {
     return std::to_string(this->dia) + "/" + std::to_string(this->mes) + "/" + std::to_string(this->anio);
+}
+
+bool DtFecha::operator<=(DtFecha fecha) {
+    return this[0] - fecha <= 0;
 }

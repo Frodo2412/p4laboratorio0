@@ -53,11 +53,6 @@ void leerHuesped(Sistema &sistema) {
     cout << "Cual es su nombre?" << endl;
     cin.ignore();
     getline(cin, name);
-//    while (name == "") {
-//        cout << "el nombre del huesped no puede ser vacio, ingrese el nombre nuevamente" << endl;
-//        cin.ignore();
-//        getline(cin, name);
-//    }
     cout << "Cual es su email?" << endl;
     cin >> mail;
     cout << "Es finger? (1-Si, 0-No)" << endl;
@@ -65,7 +60,7 @@ void leerHuesped(Sistema &sistema) {
     try {
         sistema.agregarHuesped(name, mail, isFinger);
         cout << "Nuevo huesped agregado" << endl;
-    } catch (invalid_argument) {
+    } catch (std::invalid_argument &ex) {
         cout << "el mail que acaba de ingresar ya se encuentra registrado" << endl;
     }
 }

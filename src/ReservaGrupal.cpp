@@ -13,7 +13,7 @@ ReservaGrupal::ReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, Esta
         this->huespedes[i] = inquilinos[i]->toCore();
         i++;
     }
-    while(i < MAX_HUESPEDES) {
+    while (i < MAX_HUESPEDES) {
         this->huespedes[i] = nullptr;
         i++;
     }
@@ -21,7 +21,9 @@ ReservaGrupal::ReservaGrupal(int codigo, DtFecha checkIn, DtFecha checkOut, Esta
 
 float ReservaGrupal::calcularCosto() {
     float costoPorDia = this->habitacion->getPrecio();
-    float cantDias = this->getCheckOut() - this->getCheckIn();
+    float cantDias = abs(this->getCheckOut() - this->getCheckIn());
+    if (cantidadFingers(huespedes) > 1)
+        return cantDias * costoPorDia * 0.7;
     return costoPorDia * cantDias;
 }
 
@@ -38,4 +40,12 @@ ReservaGrupal::~ReservaGrupal() {
 
 TipoReserva ReservaGrupal::getTipoReserva() {
     return Grupal;
+}
+
+int ReservaGrupal::cantidadFingers(Huesped **pHuesped) {
+    int i = 0;
+    while (i < MAX_HUESPEDES && pHuesped[i] != nullptr) {
+        i++;
+    }
+    return i;
 }

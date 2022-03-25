@@ -20,6 +20,8 @@ public:
     ~ReservaGrupal() override;
 
     TipoReserva getTipoReserva() override;
+
+    int cantidadFingers(Huesped **pHuesped);
 };
 
 

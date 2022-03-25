@@ -5,7 +5,7 @@
 #include "../include/ReservaIndividual.h"
 
 float ReservaIndividual::calcularCosto() {
-    return this->getHabitacion()->getPrecio() * (this->getCheckOut() - this->getCheckIn());
+    return this->getHabitacion()->getPrecio() * abs(this->getCheckOut() - this->getCheckIn());
 }
 
 bool ReservaIndividual::isPago() {

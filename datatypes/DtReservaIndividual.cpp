@@ -36,7 +36,7 @@ std::ostream &operator<<(std::ostream &os, DtReservaIndividual *reserva) {
 }
 
 ReservaIndividual *DtReservaIndividual::toCore(Huesped *huesped, class Habitacion *hab) {
-    return new ReservaIndividual(this->codigo, huesped, hab, this->checkIn, this->checkOut, Abierta);
+    return new ReservaIndividual(this->codigo, huesped, hab, this->checkIn, this->checkOut, this->pagado, Abierta);
 }
 
 TipoReserva DtReservaIndividual::getTipoReserva() {

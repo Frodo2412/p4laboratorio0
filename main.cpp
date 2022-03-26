@@ -39,7 +39,7 @@ bool leerBoolean() {
 
 bool leerBooleanParaContinuar() {
     int ret;
-    cout << "ingrese 1 si quiere seguir ingresando huespedes, 0 en otro caso" << endl;
+    cout << "Ingrese 1 si quiere seguir ingresando huespedes, 0 en otro caso" << endl;
     cin >> ret;
     if (ret == 1)
         return true;
@@ -61,7 +61,7 @@ void leerHuesped(Sistema &sistema) {
         sistema.agregarHuesped(name, mail, isFinger);
         cout << "Nuevo huesped agregado" << endl;
     } catch (std::invalid_argument &ex) {
-        cout << "el mail que acaba de ingresar ya se encuentra registrado" << endl;
+        cout << "El mail que acaba de ingresar ya se encuentra registrado." << endl;
     }
 }
 
@@ -75,8 +75,12 @@ void leerHabitacion(Sistema &sistema) {
     cin >> precio;
     cout << "Cual es su capacidad?" << endl;
     cin >> capacidad;
-    sistema.agregarHabitacion(numero, precio, capacidad);
-    cout << "Nueva habitacion agregada" << endl;
+    try {
+        sistema.agregarHabitacion(numero, precio, capacidad);
+        cout << "Nueva habitacion agregada" << endl;
+    } catch (std::invalid_argument &ex) {
+        cout << "Ya se encuentra una habitacion con ese numero." << endl;
+    }
 }
 
 void emitirHuespedes(Sistema &sistema) {
@@ -103,19 +107,22 @@ void emitirHabitaciones(Sistema &sistema) {
 
 void ingresarReserva(Sistema &sistema) {
     string mail;
-    int tipoReserva, codigo, hab;
+    int tipoReserva, hab;
 
     cout << "Ingrese el mail del reservante:" << endl;
     cin >> mail;
+    bool isMayor = false;
+    DtFecha fecha1;
+    DtFecha fecha2;
+    do {
+        cout << "Por favor ingrese la fecha de check in (DD MM AAAA)" << endl;
+        fecha1 = leerFecha();
 
-    cout << "Por favor ingrese la fecha de check in (DD MM AAAA)" << endl;
-    DtFecha fecha1 = leerFecha();
-
-    cout << "Por favor ingrese la fecha de check out (DD MM AAAA)" << endl;
-    DtFecha fecha2 = leerFecha();
-
-    cout << "Ingrese un codigo (en numeros) que identificaran su reserva:" << endl;
-    cin >> codigo;
+        cout << "Por favor ingrese la fecha de check out (DD MM AAAA)" << endl;
+        fecha2 = leerFecha();
+        isMayor = (fecha1 <= fecha2);
+        if (!isMayor) cout << "Ingrese un checkout despues del checkin." << endl;
+    } while (!isMayor);
 
     cout << "Ingrese el numero de habitacion que quiere reservar:" << endl;
     cin >> hab;
@@ -128,7 +135,10 @@ void ingresarReserva(Sistema &sistema) {
         cin >> tipoReserva;
         switch (tipoReserva) {
             case 1: {
-                auto *individual = new DtReservaIndividual(codigo, fecha1, fecha2, Abierta, 0, hab, false);
+                bool isPaga;
+                cout << "La reserva fue paga? (1-Si , 0-No)" << endl;
+                isPaga = leerBoolean();
+                auto *individual = new DtReservaIndividual(sistema.getNuevoCodigoReserva(), fecha1, fecha2, Abierta, 0, hab, isPaga);
                 try {
                     sistema.registrarReserva(mail, individual);
                     cout << "La reserva fue hecha con exito" << endl;
@@ -149,7 +159,7 @@ void ingresarReserva(Sistema &sistema) {
                 DtHuesped **huespedesAux = sistema.obtenerHuespedes(cantHuespedes);
                 int agregados = 0;
                 do {
-                    cout << "escriba el email de un huesped" << endl;
+                    cout << endl << "Escriba el email de un huesped" << endl;
                     cin >> email;
                     DtHuesped *maybeHuesped = nullptr;
                     i = 0;
@@ -170,12 +180,12 @@ void ingresarReserva(Sistema &sistema) {
                     delete huespedesAux[j];
                 }
                 delete[]huespedesAux;
-                auto *grupal = new DtReservaGrupal(codigo, fecha1, fecha2, Abierta, 0, hab, huespedes);
+                auto *grupal = new DtReservaGrupal(sistema.getNuevoCodigoReserva(), fecha1, fecha2, Abierta, 0, hab, huespedes);
                 try {
                     sistema.registrarReserva(mail, grupal);
                     cout << "La reserva fue hecha con exito" << endl;
                 } catch (std::invalid_argument &ex) {
-                    cout << ex.what() << endl;
+                    cout << ex.what() << "Intentelo de nuevo" << endl;
                 }
                 int j = 0;
                 while (j < MAX_HUESPEDES && huespedes[j] != nullptr) {

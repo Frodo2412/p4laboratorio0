@@ -12,7 +12,7 @@ class ReservaIndividual : public Reserva {
 private:
     bool pagado;
 public:
-    ReservaIndividual(int, Huesped *, Habitacion *, DtFecha, DtFecha, EstadoReserva);
+    ReservaIndividual(int, Huesped *, Habitacion *, DtFecha, DtFecha, bool , EstadoReserva);
 
     float calcularCosto() override;
 

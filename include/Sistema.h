@@ -24,6 +24,8 @@ public:
 
     void registrarReserva(string email, DtReserva *reserva);
 
+    int getNuevoCodigoReserva();
+
     DtReserva **obtenerReservas(DtFecha fecha, int &cantReservas);
 
     ~Sistema();
@@ -39,6 +41,8 @@ private:
 
     Reserva **reservas = new Reserva *[MAX_RESERVAS];
     int cantReservas;
+
+    int codigoReserva = 1;
 
     bool existsHabitacionWithNumero(int numero);
 

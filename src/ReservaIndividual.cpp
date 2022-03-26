@@ -16,14 +16,14 @@ void ReservaIndividual::setPago() {
     this->pagado = true;
 }
 
-ReservaIndividual::ReservaIndividual(int cod, Huesped *hues, Habitacion *hab, DtFecha In, DtFecha Out,
+ReservaIndividual::ReservaIndividual(int cod, Huesped *hues, Habitacion *hab, DtFecha In, DtFecha Out, bool pago,
                                      EstadoReserva est) {
     this->codigo = cod;
     this->huesped = hues;
     this->habitacion = hab;
     this->checkIn = In;
     this->checkOut = Out;
-    this->pagado = false;
+    this->pagado = pago;
     this->estado = est;
 }
 

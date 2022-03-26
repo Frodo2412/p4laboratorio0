@@ -58,7 +58,7 @@ std::ostream &operator<<(std::ostream &os, DtReservaGrupal *reserva) {
         os << "Huespedes: " << huespedes[i] << endl;
         i++;
         while (i < MAX_HUESPEDES && huespedes[i] != nullptr) {
-            os << huespedes[i] << endl;
+            os << "           " << huespedes[i] << endl;
             i++;
         }
     }

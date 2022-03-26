@@ -163,3 +163,9 @@ Sistema::~Sistema() {
     delete[] habitaciones;
     delete[] huespedes;
 }
+
+int Sistema::getNuevoCodigoReserva() {
+    int cod = this->codigoReserva;
+    this->codigoReserva++;
+    return cod;
+}

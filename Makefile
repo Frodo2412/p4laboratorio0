@@ -28,10 +28,11 @@ FUENTES = main.cpp src/Habitacion.cpp src/Huesped.cpp \
  datatypes/DtHabitacion.h datatypes/DtHabitacion.cpp datatypes/DtHuesped.h \
  datatypes/DtHuesped.cpp  datatypes/DtReserva.cpp datatypes/DtReserva.h \
  datatypes/DtReservaGrupal.cpp datatypes/DtReservaGrupal.h datatypes/DtReservaIndividual.cpp \
- datatypes/DtReservaIndividual.h datatypes/EstadoReserva.h datatypes/TipoReserva.h
+ datatypes/DtReservaIndividual.h datatypes/EstadoReserva.h datatypes/TipoReserva.h \
+ ej2/* resp_lab0.txt integrantes.txt
 
-ejec: $(OBJETOS) $(AUX) main.cpp Makefile
-	$(CC) $(OPCIONES) -o ejec main.cpp $(OBJETOS)
+FingVMB: $(OBJETOS) $(AUX) main.cpp Makefile
+	$(CC) $(OPCIONES) -o FingVMB main.cpp $(OBJETOS)
 
 Sistema.o: $(OBJSISTEMA) src/Sistema.cpp include/Sistema.h
 	$(CC) $(OPCIONES) -c -o Sistema.o Sistema.cpp $(OBJSISTEMA)
@@ -82,13 +83,13 @@ TipoReserva.o: datatypes/TipoReserva.h
 	$(CC) $(OPCIONES) -c -o TipoReserva.o datatypes/TipoReserva.h
 
 clean:
-	rm -f $(OBJETOS) $(AUX) ejec
+	rm -f $(OBJETOS) $(AUX) FingVMB
 
 rebuild:
 	make clean
 	make
 
 entrega: $(FUENTES) Makefile
-	rm -f entrega.tar.gz
-	tar -cvf entrega.tar $(FUENTES) Makefile
-	gzip entrega.tar
+	rm -f 45_lab0.tar.gz
+	tar -cvf 45_lab0.tar $(FUENTES) Makefile
+	gzip 45_lab0.tar

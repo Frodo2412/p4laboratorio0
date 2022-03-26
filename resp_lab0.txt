@@ -1,3 +1,14 @@
+Notas sobre la entrega:
+-Los comandos en el makefile son:
+    -make  //Compila el proyecto
+    -make clean //Limpia el ejecutable y los binarios
+    -make rebuild //Limpia y luego compila nuevamente
+    -make entrega //Crear un .tar.gz entrega del proyecto
+-El ejercicio 1 se encuentra en el directorio base (45_lab0) y es el que se compila al usar el makefile en ese directorio
+-El ejercicio 2 se encuenta en la carpeta ej2 y tiene su propio makefile que funciona de la misma manera que el de el ej1
+-El ej 1 crea un ejecutable llamado FingVMB y el makefile del ej2 crea un ejecutable llamado ejec_Ej2
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 Una primera aproximación a la solución consistió en que en cada archivo .h (a, b y c) se ponga un #include de los demás archivos .h, con el propósito
 de que el compilador comprenda a que nos referimos con "un puntero a la clase B" como pseudo atributo de la clase A, a modo de ejemplo. Luego, se
 incluye en el main un header #include por cada archivo .h. Nos encontramos frente a varios errores:

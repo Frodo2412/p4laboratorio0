@@ -24,7 +24,7 @@ c.o: src include
 	$(CC) $(OPCIONES) -c -o c.o c.cpp
 
 clean:
-	rm -f $(OBJETOS) ejec
+	rm -f $(OBJETOS) ejec_Ej2
 
 rebuild:
 	make clean

@@ -1,0 +1,78 @@
+Una primera aproximación a la solución consistió en que en cada archivo .h (a, b y c) se ponga un #include de los demás archivos .h, con el propósito
+de que el compilador comprenda a que nos referimos con "un puntero a la clase B" como pseudo atributo de la clase A, a modo de ejemplo. Luego, se
+incluye en el main un header #include por cada archivo .h. Nos encontramos frente a varios errores:
+
+i)Obtenemos una recursión de inclusión de archivos potencialmente infinita, pues a.h incluye a b.h, pero b.h
+  también incluye a a.h, y así. El problema no llega a concretarse pues el compilador aborta al encontrarse
+  con el siguiente punto.
+
+ii)Al incluir los archivos a.h, b.h y c.h en el main, el compilador obtiene varias definiciones de una clase
+  (que en realidad son la misma) y no se decide entre ellas.
+
+iii)En el main, para el constructor de la clase A requerimos que las instancias de las clases B y C ya hayan
+  sido creadas; pero los objetos de las clases B y C tambien tienen el mismo requerimiento en su constructor.
+  El problema es circular pues para crear cualquier instancia, ya deben estar creadas las otras dos y por lo
+  tanto no es posible determinar cuál de todas ellas debería crearse primero.
+
+
+La solución al último punto, es que el link entre dos instancias de clases no sea directamente un puntero a la instancia destino, sino un puntero a
+un puntero a la instancia destino. De este modo, es posible primero reservar memoria estática para el puntero de cada objeto y usar el mismo para los
+links.
+
+La solución al primer y al segundo problema está vinculada al concepto de forward declaration. Formalmente, un forward declaration es la declaración
+de una estructura (en este caso, una clase) sin implementar la misma (la implementación deberá darse en algún momento posterior). A nivel clases, 
+esto sucede de la siguiente manera:
+-----------------------------
+    class clase0;
+
+    ...
+
+    class clase0
+    {
+        //Implementación de clase0
+    }
+-----------------------------
+Esto nos permite que entre la declaración de clase0 y su implementación, objetos de clase0 puedan ser referenciados mediante punteros sin necesidad
+de conocer la estructura interna de la misma.
+Para el primer problema, el recurso puede utilizarse para evitar la inclusión circular de archivos .h de la siguiente manera. Notar que no ocurre 
+circularidad de includes entre los archivos considerados.
+-----------------------------
+En c.h:
+
+    //forward declaration de las clases A y B.
+    class A;
+    class B;
+    
+    //Implementación de la clase C, que ahora sabe que existen A y B.
+    ...
+-----------------------------
+En b.h:
+
+    //Se trae al documento el forward declaration de A y B, y la clase C implementada.
+    #include "c.h"
+
+    //Implementación de la clase B, que por incluir a c.h conoce las clases A y C, y puede referenciarlas.
+    ...
+-----------------------------
+En a.h:
+    //Este include trae al documento todo el código recién expuesto; hasta ahora, se hizo forward declaration de A, pero no se implementó aún.
+    #include "b.h"
+
+    //Implementación de la clase A.
+    ....
+-----------------------------
+En main.cpp:
+    //Se incluye únicamente a a.h, que ya trae implementadas las clases A, B y C.
+    #include "a.h"
+
+    ...
+-----------------------------
+
+Finalmente, lo recién expuesto resuelve también el problema de múltiples definiciones, pues con la estructura de includes y forward declaration
+indicada, cada implementación ocurre una sola vez.
+
+
+FUENTES:
+https://www.geeksforgeeks.org/what-are-forward-declarations-in-c/
+http://maikelshortcuts.blogspot.com/2012/11/resolviendo-dependencias-circulares-en_2698.html
+https://stackoverflow.com/questions/625799/resolve-build-errors-due-to-circular-dependency-amongst-classes
